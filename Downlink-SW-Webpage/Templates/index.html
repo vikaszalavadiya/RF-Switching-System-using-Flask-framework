@@ -1,0 +1,2052 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" href="{{ url_for('static', filename='img/pspl1.png') }}"/> 
+		<!--<link rel="icon" href="static/img/pspl1.png"/>-->
+		<title>PSPL</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes">
+        <!--<link href="{{ url_for('static', filename='css/pspl3.css') }}" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">        
+        <link href="{{ url_for('static', filename='css/site.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/jquery-ui.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/jquery.js') }}"  type="text/javascript"></script>
+		<link href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+		<script src="{{ url_for('static', filename='js/bootstrap.js') }}"  type="text/javascript"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"  type="text/javascript"></script>
+		<script src="{{ url_for('static', filename='js/jquery.bootstrap.newsbox.js') }}"  type="text/javascript"></script>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.1.min.js') }}"  type="text/javascript"></script>
+		<script src="{{ url_for('static', filename='js/jquery.flexisel.js') }}"  type="text/javascript"></script> -->
+        <!-- Use for windows PC for Editing -->
+        <link href="static/css/pspl.css" type="text/css" rel="stylesheet">
+		<script src="static/js/canvas.js"  type="text/javascript"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="static/css/bootstrap.css" type="text/css" rel="stylesheet">
+        <link href="static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="static/css/site.css" type="text/css" rel="stylesheet">
+        <link href="static/css/jquery-ui.css" type="text/css" rel="stylesheet">
+        <link href="static/css/style.css" type="text/css" rel="stylesheet">
+        <script src="static/js/jquery-1.10.1.min.js"  type="text/javascript"></script>
+        <script src="static/js/bootstrap.js"  type="text/javascript"></script>
+        <script src="static/js/bootstrap.min.js"  type="text/javascript"></script>
+        <script src="static/js/jquery.flexisel.js"  type="text/javascript"></script>
+        <script src="static/js/jquery.bootstrap.newsbox.js"  type="text/javascript"></script>
+        <script src="static/js/jquery.js"  type="text/javascript"></script>
+		
+        
+	<script type="text/javascript">var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+    </head>
+    <body>
+        <header>
+            <div class="graybar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="social">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bluebar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="logo">
+                                    <!--<a><img src="{{ url_for('static', filename='img/logo1.png') }}" alt="logo"></a>-->
+                                    <a><img src="static/img/logo1.png" alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+								<div class="menu">
+									<nav class="navbar navbar-default">
+										<div class="container-fluid">
+											<ul class="nav navbar-nav">
+												<li>
+													<a id="myBtn1" href="javascript:networkfunc()" >Network</a>
+												</li>
+												<li>
+													<a id="myBtn2">About</a>
+												</li>
+												
+												
+												<!--<li style="color: white;">
+													<a href="pdf/manual.pdf" target="_blank" id="myBtn3">User Manual</a>
+												</li>-->
+												
+											</ul>
+										</div>
+										<!-- Setting Window -->
+										<div id="myModal1" class="modal">
+
+											<!-- Modal content -->
+											<div class="modal-content">
+												<div class="modeldiv1">
+													<table id="iptable1">
+														<tr>
+															<td><h3 style="color: white; float: right;">Network</h3></td>
+															<td><span class="close1">&times;</span></td>
+														</tr>
+													</table>
+											
+												</div>
+												<div class="modeldiv2">
+													<h4><b>IP Configuration</b></h4>
+													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
+													<form name="myipconfig" action="" method="post" onsubmit = "return validateipaddress()">
+													<table class="modeltext">
+														<tr>
+															<td><b>IP Address</b></td>
+															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="ipadd" autocomplete="off" maxlength="15" size="12" name="ipaddress" required value="{{webipaddress}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))"/></td>
+															<td style="padding-left: 120px;"><button type="button" id="editbtn" onclick="valueenable()">Edit</button></td>
+														</tr>
+														<tr>
+															<td><b>Gateway Address</b></td>
+															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="gateway" autocomplete="off" maxlength="15" size="12" name="gatewayadd" required value="{{webgatewayadd}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))" /></td>
+															
+														</tr>
+														<tr>
+															<td><b>Subnet mask</b></td>
+															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="subnet" autocomplete="off" maxlength="15" size="12" name="subnetmask" required value="{{websubnetmask}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))" /></td>
+														</tr>
+													</table>
+													<br>									
+													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
+													<table style=" margin-left: auto; margin-right: auto;">
+														<tr>
+															<td style="padding: 0 20px 0 20px;"><button type="button" id="exitbtn" onclick="exitmodelfunction()">Exit</button></td>
+															<td style="padding: 0 20px 0 20px; "><input name="btnval" id="setipbtn" type="submit" value="Apply" onclick="postfunction4()"></td>
+															
+														</tr>
+													</table>
+													</form>													
+												</div>
+											</div>
+										</div>
+										<!-- The Modal -->
+										<div id="myModal2" class="modal">
+						
+											<!-- Modal content -->
+											<div class="modal-content">
+												<div class="modeldiv1">
+													<table id="iptable1">
+														<tr>
+															<td><h3 style="color: white; float: right;">About</h3></td>
+															<td><span class="close2">&times;</span></td>
+														</tr>
+													</table>
+											
+												</div>
+												<div class="modeldiv2">
+													<h4>Product</h4>
+													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
+													<table class="modeltext">
+														<tr>
+															<td><b>Product Name</b></td>
+															<td><b>:</b> Ku-Band RF Downlink Switching Unit</td>
+														</tr>
+														<tr>
+															<td><b>Model Number</b></td>
+															<td><b>:</b> CSW25Ku</td>
+														</tr>
+														<tr>
+															<td><b>Serial Number</b></td>
+															<td><b>:</b>  </td>
+														</tr>
+														<tr>
+															<td><b>Firmware Version</b></td>
+															<td><b>:</b> 2.1.0</td>
+														</tr>
+													</table>
+													<br>
+													<h4>Manufacturer</h4>
+													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
+													<table class="modeltext">
+														<tr>
+															<td><b>Company Name</b></td>
+															<td><b>:</b> PranisKom Solutions Private Limited</td>
+														</tr>
+														<tr>
+															<td><b>E-mail</b></td>
+															<td><b>:</b> sales@praniskom.com</td>
+														</tr>
+														<tr>
+															<td><b>Phone</b></td>
+															<td><b>:</b> +91 265 2985335</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>			
+									</nav>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="product">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="partred">
+                                <h2 style="font-size: 17px"><span><b>Ku-Band RF Downlink Switching Unit</b></span><hr style="width: 100%; height: 0.5px; background-color: #d2300e;" ></h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vikas">
+                        <div class="satelite">
+				            <div class="comu">			
+					           <div class="row">
+					               
+							   <div class="col-lg-12 col-sm-12 ">
+								<div class="comuinner" style="text-align:left; margin-left:auto; margin-right:auto;"> 
+									<h3 id="h3css">Current Status</h3>
+									<div class="col-md-6">
+										<font size="3" color="#5A5A5A">
+										   <table id="iptable">
+										  	<form action ="" method ="post">
+											
+										   	<tr>
+											 	<td><p>Down Converter 1</p></td>
+												<td><p>:</p></td>
+											 	<td><b><p id="converter1">{{converter1}}</p></b></td>
+										  	</tr>
+										  	<tr>
+											 	<td><p>Down Converter 2</p></td>
+												<td><p>:</p></td>
+											 	<td><b><p id="converter2">{{converter2}}</p></b></td>
+										  	</tr>
+										 	<tr>
+											 	<td><p>Servo & Tracking</p></td>
+												<td><p>:</p></td>
+											 	<td><b><p id="tracking">{{tracking}}</p></b></td>
+										  	</tr>
+											<tr>
+												<td><p>Line Amplifier</p></td>
+											    <td><p>:</p></td>
+												<td><b><p id="lineamp">{{lineamp}}</p></b></td>
+											 </tr>
+											 <tr>
+												<td><p>AUPC</p></td>
+											   	<td><p>:</p></td>
+												<td><b><p id="AUPC">{{AUPC}}</p></b></td>
+											 </tr>
+										  	</form>
+										   </table>
+										</font>
+									</div>
+									<div class="col-md-6">
+										<table id ="remote_table">
+											<tr>
+												<td ><p><span id="remote_circle"></span></p></td >
+												<td> <b><p id="lclrem_web">{{lclrem_web}}</p></b></td>
+											</tr>
+										</table>
+									</div>
+									
+								</div>
+									
+								</div>
+								<div class="col-lg-12 col-sm-12 ">
+									<div class="comuinner" style="text-align:left; margin-left:auto; margin-right:auto;"> 
+										<h3 id="h3css">MIMIC GUI</h3> 
+										<div style="border: 0 solid #000; width:100%; margin:auto; height:380px;">
+											<div id="port1"><h3 id="port1_text">RX Port 1</h3></div>
+											  <div id="divi1"> <h3 id="divi1_text">Divider</h3> </div>
+
+											<div id="line_port1_divi1"></div>
+											<div id="right_divi1"></div>
+											
+											<div id="line_divi1_cs1_1"></div>
+											<div id="line_divi1_cs1_2"></div>
+											<div id="down_cs1"></div>
+											<div id="line_cs1_T1"></div>
+											<div id="line_cs1_dc1"></div>
+											<div id="right_dc1"></div>
+											<p id="cs1_text">D/C-1</p>
+
+											<!-- ------- Circle 1 img --------- -->
+											<div class="T11">
+												<div class="arrow1 t91"></div>
+												<div class="arrow1 t92"></div>
+												<div class="arrow1 t93"></div>
+											</div>
+											
+											<!-- <div id="T1"> <h3 id="T1_text">T</h3> </div>-->
+											<div id="dc1"> <h3 id="dc1_text">D/C 1</h3> </div>
+											<!-- ------------------------------------------------------------------------------------------- -->
+											<div id="line_divi1_cs2_1"></div>
+											<div id="line_divi1_cs2_2"></div>
+											<div id="down_cs2"></div>
+											<p id="cs2_text">D/C-2</p>
+											
+
+											<!-- ------- Circle 2 img --------- -->
+
+											<div id="line_cs2_T2"></div>
+											<div id="line_cs2_dc2"></div>
+											<div id="right_dc2"></div>
+											<div class="T22">
+												<div class="arrow1 t91"></div>
+												<div class="arrow1 t92"></div>
+												<div class="arrow1 t93"></div>
+											</div>
+											
+											<!-- <div id="T2"> <h3 id="T2_text">T</h3> </div> -->
+											<div id="dc2"> <h3 id="dc2_text">D/C 2</h3> </div>
+
+											<!-- ------------------------------------------------------------------------------------------- -->
+											<div id="line_divi1_cs3_1"></div>
+											<div id="line_divi1_cs3_2"></div>
+											<div id="down_cs3"></div>
+											<p id="cs3_text">Servo & Track.</p>
+
+											<!-- ------- Circle 3 img --------- -->
+
+
+											<div id="line_cs3_T3"></div>
+											<div id="line_cs3_acu"></div>
+											<div id="right_acu"></div>
+											<div class="T33">
+												<div class="arrow1 t91"></div>
+												<div class="arrow1 t92"></div>
+												<div class="arrow1 t93"></div>
+											</div>
+											
+											<!-- <div id="T3"> <h3 id="T3_text">T</h3> </div>-->
+											<div id="acu"> <h3 id="acu_text">ACU</h3> </div>
+
+											<!-- ------------------------------------------------------------------------------------------- -->
+											<div id="line_divi1_cs4_1"></div>
+											<div id="line_divi1_cs4_2"></div>
+											<div id="down_cs4"></div>
+											<p id="cs4_text">Line Amp.</p>
+
+											<!-- ------- Circle 4 img --------- -->
+
+
+											<div id="line_cs4_T4"></div>
+											<div id="line_cs4_amp"></div>
+											<div id="right_amp"></div>
+											<div class="T44">
+												<div class="arrow1 t91"></div>
+												<div class="arrow1 t92"></div>
+												<div class="arrow1 t93"></div>
+											</div>
+											
+											<!-- <div id="T3"> <h3 id="T3_text">T</h3> </div>-->
+											<div id="amp"> <h3 id="amp_text">Line Amp</h3> </div>
+
+											<!-- ------------------------------------------------------------------------------------------- -->
+
+											<div id="line_divi1_cs5_1"></div>
+											<div id="line_divi1_cs5_2"></div>
+											<div id="down_cs5"></div>
+											<p id="cs5_text">AUPC</p>
+
+											<!-- ------- Circle 5 img --------- -->
+
+
+											<div id="line_cs5_T5"></div>
+											<div id="line_cs5_aupc"></div>
+											<div id="right_aupc"></div>
+											<div class="T55">
+												<div class="arrow1 t91"></div>
+												<div class="arrow1 t92"></div>
+												<div class="arrow1 t93"></div>
+											</div>
+											
+											<!-- <div id="T3"> <h3 id="T3_text">T</h3> </div>-->
+											<div id="aupc"> <h3 id="aupc_text">AUPC</h3> </div>
+
+											<!-- ------------------------------------------------------------------------------------------- -->
+
+											<div id="port2"><h3 id="port1_text">RX Port 2</h3></div>
+											<div id="line_port2_divi2"></div>
+											<div id="right_divi2"></div>
+											<div id="divi2"> <h3 id="divi1_text">Divider</h3> </div>
+											
+											<div id="line_divi2_cs1_1"></div>
+											<div id="line_divi2_cs1_2"></div>
+											<div id="up_cs1"></div>
+
+											<div id="line_divi2_cs2_1"></div>
+											<div id="line_divi2_cs2_2"></div>
+											<div id="up_cs2"></div>
+
+
+											<div id="line_divi2_cs3_1"></div>
+											<div id="line_divi2_cs3_2"></div>
+											<div id="up_cs3"></div>
+
+											<div id="line_divi2_cs4_1"></div>
+											<div id="line_divi2_cs4_2"></div>
+											<div id="up_cs4"></div>
+
+											<div id="line_divi2_cs5_1"></div>
+											<div id="line_divi2_cs5_2"></div>
+											<div id="up_cs5"></div>
+
+
+											<!-- ------------ Upper imgs ------------------------------------------------------------- -->
+
+											
+											
+											<form action ="" method ="post" onsubmit="return validate1(this);">
+												<button id="mybtn" name="btnval" type="Submit" value="Converter1" > <img id ="circleimg1" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>
+												<!--<button id="mybtn" name="btnval" type="Submit" value="Converter1" > <img id ="circleimg1" src="static/img/varc.png" alt="circle"></button>-->
+																  <!--onclick="postfunction1()"
+																  <input name="btnval" type="Submit" value="Channel" id ="circleimg" src="{{ url_for('static', filename='img/varc3.png') }}" alt="circle">-->
+											</form>
+
+											<form action ="" method ="post" onsubmit="return validate2(this);">
+												<button id="mybtn" name="btnval" type="Submit" value="Converter2" > <img id ="circleimg2" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>
+											</form>
+
+											<form action ="" method ="post" onsubmit="return validate3(this);" >
+												<button id="mybtn" name="btnval" type="Submit" value="Tracking" > <img id ="circleimg3" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>		
+											</form>
+
+											<form action ="" method ="post" onsubmit="return validate5(this);" >
+												<button id="mybtn" name="btnval" type="Submit" value="lineamp" > <img id ="circleimg4" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>		 
+											</form>
+
+											<form action ="" method ="post" onsubmit="return validate6(this);" >
+												<button id="mybtn" name="btnval" type="Submit" value="aupc" > <img id ="circleimg5" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>		
+											</form>
+
+											<!-- ------------------------------------------------------------------------ -->
+
+										</div>
+										
+									</div>	
+							</div>	
+						</div>
+							   			
+					       </div>
+				        </div>
+			         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+        </main>
+
+       <!--<footer>
+                <div class="blueftr">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-3">
+                                <div class="use" >
+									<div style= "visibility:hidden">		
+										<lable id="mode">{{mode}}</lable>-->
+										<!--<label id="lclrmt" >{{remote}}</label>-->
+										<!--<label id="chnl">{{chnl}}</label>		
+									</div>
+                                </div>
+                            </div>
+                      
+                        
+                        </div>
+                    </div>
+                </div>
+				
+            </footer> -->
+			<footer>
+			<div class="graybar"></div>
+				<div class="semifooter">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6 col-sm-6">
+								<!--<div class="copy">
+									<p>&copy; praniskom. All rights Reserved</p>
+								</div>-->
+							</div>
+							<div class="col-lg-6 col-sm-6">
+								<div class="design">
+									<p>Designed by: PSPL</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</footer>
+    </body>
+    
+
+<!-- Right Click Disable -->
+
+<script language="JavaScript">
+    document.oncontextmenu =new Function("return false;")
+</script>
+
+
+<!--  Setting Popup  -->
+<script>
+	// Get the modal
+	var modal1 = document.getElementById("myModal1");
+	
+	// Get the button that opens the modal
+	var btn1 = document.getElementById("myBtn1");
+	
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close1")[0];
+	
+	// When the user clicks the button, open the modal 
+	btn1.onclick = function() {
+	  modal1.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal1.style.display = "none";
+	}
+	
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal1) {
+		modal1.style.display = "none";
+	  }
+	}
+
+	function exitmodelfunction() {
+		document.getElementById("ipadd").disabled = true;
+		document.getElementById("gateway").disabled = true;
+		document.getElementById("subnet").disabled = true;
+		document.getElementById("ipadd").style.borderColor = "#ffff";
+		document.getElementById("gateway").style.borderColor = "#ffff";
+		document.getElementById("subnet").style.borderColor = "#ffff";
+
+		document.getElementById("setipbtn").disabled = true;
+		document.getElementById("editbtn").innerHTML = "Edit"
+		
+		modal1.style.display = "none";
+	} 
+	
+</script>
+
+<!--  About Popup  -->
+<script>
+	// Get the modal
+	var modal2 = document.getElementById("myModal2");
+	
+	// Get the button that opens the modal
+	var btn2 = document.getElementById("myBtn2");
+	
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close2")[0];
+	
+	// When the user clicks the button, open the modal 
+	btn2.onclick = function() {
+	  modal2.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal2.style.display = "none";
+	}
+	
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal2) {
+		modal2.style.display = "none";
+	  }
+	}
+</script>
+
+<script>
+	
+function networkfunc () {
+	var getipadd = '{{webipaddress}}';
+	var getgateway = '{{webgatewayadd}}';
+	var getsubnet = '{{websubnetmask}}';
+	document.getElementById("ipadd").value = getipadd;
+	document.getElementById("gateway").value = getgateway;
+	document.getElementById("subnet").value = getsubnet;
+}
+	
+</script>
+
+
+
+<script>
+var green1 = '#478778';
+var green = '#0BDA51';
+var red = '#e74c3c';
+var yellow = '#FFEA00';
+
+var intervalID = setInterval(confunc,500);
+
+function confunc () {
+	$.getJSON($SCRIPT_ROOT + '/_load1',
+     	function(data) {
+		$('#lclrem_web').text(data.lclrem_web);
+		$('#converter1').text(data.converter1);
+		$('#converter2').text(data.converter2);
+		$('#tracking').text(data.tracking);
+		$('#lineamp').text(data.lineamp);
+		$('#AUPC').text(data.AUPC);
+        
+	});
+	
+	document.getElementById("converter1").style.color = '#5A5A5A';
+	document.getElementById("converter2").style.color = '#5A5A5A';
+	document.getElementById("tracking").style.color = '#5A5A5A';
+	document.getElementById("lineamp").style.color = '#5A5A5A';
+	document.getElementById("AUPC").style.color = '#5A5A5A';
+	
+	//document.getElementById("line_port1_divi1").style.backgroundColor = green;
+	//document.getElementById("line_port2_divi2").style.backgroundColor = green;
+	//document.getElementById("right_divi1").style.borderColor = green;
+	//document.getElementById("right_divi2").style.borderColor = green;
+	
+	//document.getElementById("line_cs1_dc1").style.backgroundColor = green;
+	//document.getElementById("right_dc1").style.borderColor = green;
+	//document.getElementById("line_cs1_T1").style.backgroundColor = yellow;
+	//document.getElementById("line_cs2_dc2").style.backgroundColor = green;
+	//document.getElementById("right_dc2").style.borderColor = green;
+	//document.getElementById("line_cs2_T2").style.backgroundColor = yellow;
+	//document.getElementById("line_cs3_T3").style.backgroundColor = yellow;
+	//document.getElementById("line_cs3_acu").style.backgroundColor = green;
+	//document.getElementById("right_acu").style.borderColor = green;
+	
+	if (document.getElementById("lclrem_web").innerHTML == "Remote mode"){
+		document.getElementById("remote_table").style.color = green1;
+		document.getElementById("remote_circle").style.backgroundColor = green1;
+		
+	}
+	else{
+		document.getElementById("remote_table").style.color = red;
+		document.getElementById("remote_circle").style.backgroundColor = red;
+		
+	}
+
+
+	if(document.getElementById("converter1").innerHTML == "Position 1"){
+		document.getElementById('circleimg1').src="{{ url_for('static', filename='img/varc1.png') }}";
+		//document.getElementById("line_divi1_cs1_1").style.backgroundColor = green;
+		//document.getElementById("line_divi1_cs1_2").style.backgroundColor = green;
+		//document.getElementById("down_cs1").style.borderColor = green;
+		//document.getElementById("line_divi2_cs1_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi2_cs1_2").style.backgroundColor = yellow;
+		//document.getElementById("up_cs1").style.borderColor = yellow;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/static/img/varc1.png";	
+	}
+	else{
+		document.getElementById('circleimg1').src="{{ url_for('static', filename='img/varc2.png') }}";
+		//document.getElementById("line_divi1_cs1_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi1_cs1_2").style.backgroundColor = yellow;
+		//document.getElementById("down_cs1").style.borderColor = yellow;
+		//document.getElementById("line_divi2_cs1_1").style.backgroundColor = green;
+		//document.getElementById("line_divi2_cs1_2").style.backgroundColor = green;
+		//document.getElementById("up_cs1").style.borderColor = green;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/staticimg/varc2.png";	
+	}
+
+	if(document.getElementById("converter2").innerHTML == "Position 1"){
+		document.getElementById('circleimg2').src="{{ url_for('static', filename='img/varc1.png') }}";
+		//document.getElementById("line_divi1_cs2_1").style.backgroundColor = green;
+		//document.getElementById("line_divi1_cs2_2").style.backgroundColor = green;
+		//document.getElementById("down_cs2").style.borderColor = green;
+		//document.getElementById("line_divi2_cs2_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi2_cs2_2").style.backgroundColor = yellow;
+		//document.getElementById("up_cs2").style.borderColor = yellow;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/static/img/varc1.png";	
+	}
+	else{
+		document.getElementById('circleimg2').src="{{ url_for('static', filename='img/varc2.png') }}";
+		//document.getElementById("line_divi1_cs2_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi1_cs2_2").style.backgroundColor = yellow;
+		//document.getElementById("down_cs2").style.borderColor = yellow;
+		//document.getElementById("line_divi2_cs2_1").style.backgroundColor = green;
+		//document.getElementById("line_divi2_cs2_2").style.backgroundColor = green;
+		//document.getElementById("up_cs2").style.borderColor = green;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/staticimg/varc2.png";	
+	}
+
+	if(document.getElementById("tracking").innerHTML == "Position 1"){
+		document.getElementById('circleimg3').src="{{ url_for('static', filename='img/varc1.png') }}";
+		//document.getElementById("line_divi1_cs3_1").style.backgroundColor = green;
+		//document.getElementById("line_divi1_cs3_2").style.backgroundColor = green;
+		//document.getElementById("down_cs3").style.borderColor = green;
+		//document.getElementById("line_divi2_cs3_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi2_cs3_2").style.backgroundColor = yellow;
+		//document.getElementById("up_cs3").style.borderColor = yellow;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/static/img/varc1.png";	
+	}
+	else{
+		document.getElementById('circleimg3').src="{{ url_for('static', filename='img/varc2.png') }}";
+		//document.getElementById("line_divi1_cs3_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi1_cs3_2").style.backgroundColor = yellow;
+		//document.getElementById("down_cs3").style.borderColor = yellow;
+		//document.getElementById("line_divi2_cs3_1").style.backgroundColor = green;
+		//document.getElementById("line_divi2_cs3_2").style.backgroundColor = green;
+		//document.getElementById("up_cs3").style.borderColor = green;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/staticimg/varc2.png";	
+	}
+
+	if(document.getElementById("lineamp").innerHTML == "Position 1"){
+		document.getElementById('circleimg4').src="{{ url_for('static', filename='img/varc1.png') }}";
+	}
+	else{
+		document.getElementById('circleimg4').src="{{ url_for('static', filename='img/varc2.png') }}";
+	}
+
+	if(document.getElementById("AUPC").innerHTML == "Position 1"){
+		document.getElementById('circleimg5').src="{{ url_for('static', filename='img/varc1.png') }}";
+	}
+	else{
+		document.getElementById('circleimg5').src="{{ url_for('static', filename='img/varc2.png') }}";
+	}
+
+}
+
+</script>
+<script>
+
+document.getElementById("ipadd").disabled = true;
+document.getElementById("gateway").disabled = true;
+document.getElementById("subnet").disabled = true;
+document.getElementById("ipadd").style.borderColor = "#ffff";
+document.getElementById("gateway").style.borderColor = "#ffff";
+document.getElementById("subnet").style.borderColor = "#ffff";
+
+document.getElementById("setipbtn").disabled = true;
+document.getElementById("editbtn").innerHTML = "Edit";
+
+function valueenable () {
+
+	if (document.getElementById("editbtn").innerHTML=="Edit"){
+
+		document.getElementById("ipadd").disabled = false;
+		document.getElementById("gateway").disabled = false;
+		document.getElementById("subnet").disabled = false;
+		document.getElementById("ipadd").style.borderColor = "#8B8B8B";
+		document.getElementById("gateway").style.borderColor = "#8B8B8B";
+		document.getElementById("subnet").style.borderColor = "#8B8B8B";
+
+		document.getElementById("setipbtn").disabled = false;
+		document.getElementById("editbtn").innerHTML = "Close";
+	}
+	else {
+		document.getElementById("ipadd").disabled = true;
+		document.getElementById("gateway").disabled = true;
+		document.getElementById("subnet").disabled = true;
+		document.getElementById("ipadd").style.borderColor = "#ffff";
+		document.getElementById("gateway").style.borderColor = "#ffff";
+		document.getElementById("subnet").style.borderColor = "#ffff";
+
+		document.getElementById("setipbtn").disabled = true;
+		document.getElementById("editbtn").innerHTML = "Edit"
+
+	}
+	
+}
+</script>
+<script>
+
+function validateipaddress()
+{
+	var varipaddress = document.myipconfig.ipaddress.value;
+	var vargatewayadd = document.myipconfig.gatewayadd.value;
+	var varsubnetmask = document.myipconfig.subnetmask.value;
+	
+	var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+	if (varsubnetmask.match(ipformat)) {
+		
+	}
+	else {
+		alert("Invalide Subnetmask data !!!");
+		return false;
+	}
+	
+	if (varipaddress.match(ipformat)) {
+		modal1.style.display = "none";
+		
+	}
+	else {
+		alert("Invalide IP Address data !!!");
+		return false;
+	}
+	if (vargatewayadd.match(ipformat)) {
+		
+	}
+	else {
+		alert("Invalide Gateway Address data !!!");
+		return false;
+	}
+	
+	
+}
+
+function validate1(form) {
+	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
+		return confirm('Are you sure, Do you want to change Position?');
+	}
+	else{
+		alert("Equipment is not in Remote mode. Please use front panel to change Remote mode.");
+		return false;
+	}	
+}
+function validate2(form) {
+	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
+		return confirm('Are you sure, Do you want to change Position?');
+	}
+	else{
+		alert("Equipment is not in Remote mode. Please use front panel to change Remote mode.");
+		return false;
+	}	
+}
+
+function validate3(form) {
+	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
+		return confirm('Are you sure, Do you want to change Position?');
+	}
+	else{
+		alert("Equipment is not in Remote mode. Please use front panel to change Remote mode.");
+		return false;
+	}	
+}
+
+function postfunction4() {
+	alert("Equipment will Restart. When you change IP Configuration.");	
+}
+
+function validate5(form) {
+	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
+		return confirm('Are you sure, Do you want to change Position?');
+	}
+	else{
+		alert("Equipment is not in Remote mode. Please use front panel to change Remote mode.");
+		return false;
+	}	
+}
+
+function validate6(form) {
+	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
+		return confirm('Are you sure, Do you want to change Position?');
+	}
+	else{
+		alert("Equipment is not in Remote mode. Please use front panel to change Remote mode.");
+		return false;
+	}	
+}
+
+
+</script>
+<style>
+/* ---------------  Arrows ----------------------- */  
+.arrow {
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+}
+
+
+/* ---------------  Terminator ----------------------- */  
+.t91 {
+	position: absolute;
+	transform: rotate(-45deg);
+  	-webkit-transform: rotate(-45deg);	
+}
+.t92 {
+	position: absolute;
+	transform: rotate(-45deg);
+  	-webkit-transform: rotate(-45deg);
+    margin-top:12px;
+}
+.t93 {
+	position: absolute;
+	transform: rotate(-45deg);
+  	-webkit-transform: rotate(-45deg);
+    margin-top:24px;
+}
+
+.arrow1 {
+	border: solid #000000;
+	border-width: 0 3.5px 3.5px 0;
+	display: inline-block;
+	padding: 4px;
+}
+/* ----------------------------------- */ 
+
+
+/*  All Titels CSS Codes*/
+#h3css{
+	padding: 6px 0 0 10px ;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400
+}
+
+/*  Set IP Address CSS Codes*/
+
+#iptable{
+	display:block;
+	margin: 5px 0 0 0;
+}
+#iptable tr td{
+	padding:0 0 0 5px;
+}
+
+.ipinputtag {
+	padding: 1px 2px;
+	display:inline-block;
+	border:2px solid #ccc;
+	border-radius:4px;
+	border-color: #ffff;
+	background-color: #ffff;
+	
+}
+
+#remote_table {
+	float:right;
+	margin:10px 0 0 0;
+	color:#fff;
+	text-align:center;
+	vertical-align: middle;
+}
+
+#remote_table tr td {
+   padding-left:10px;
+   font-size: 18px;
+}
+
+#remote_circle{
+	background-color:#fff;
+	display:block;
+	height:18px;
+	width:18px;
+	border-radius:50%;
+	margin:auto;
+}
+#converter1{
+	color:#fff;
+}
+#converter2{
+	color:#fff;
+}
+#tracking{
+	color:#fff;
+}
+#lineamp{
+	color:#fff;
+}
+#AUPC{
+	color:#fff;
+}
+
+/* ************************************** */
+#editbtn{
+	display: inline-block;
+	border: none;
+	color: black;
+	width: 55px;
+	padding: 5px 10px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #ccd1d1;
+	border-radius: 4px;
+	float:right;
+	/*margin-right:362px;*/
+}
+#exitbtn{
+	display:block;
+	border: none;
+	color: black;
+	width: 60px;
+	padding: 5px 12px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #ccd1d1;
+	border-radius: 5px;
+	
+	
+}
+#setipbtn{
+	display:block;
+	border: none;
+	color: #fff;
+	padding: 5px 12px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #028fcf 0%,#283b93 100%);
+	border-radius: 5px;
+	transform: scale(1);
+	transition: 0.1s;
+	
+}
+#setipbtn:hover{
+        transform: scale(1.01);
+}
+
+/*  Control Redundancy Mode circle CSS Codes*/
+
+#auto{
+	display: inline-block;
+	border: none;
+	color: #fff;
+	padding: 6px 10px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #028fcf;
+	border-radius: 200px;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#auto:hover{
+        transform: scale(1.1);
+}
+
+#manual{
+	display: inline-block;
+	border: none;
+	color: #fff;
+	padding: 6px 10px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #028fcf;
+	border-radius: 200px;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#manual:hover{
+        transform: scale(1.1);
+}
+
+
+#automan {
+	height: 90px;
+	width: 90px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	margin:0 auto;
+}
+    
+/*  MIMIC GUI Boxes CSS Codes*/
+
+#myBtn3:focus
+{
+  color:#fff;
+}
+
+#mybtn{
+	border: 0;
+}
+
+#port1 {
+        position: absolute;
+        height: 35px;
+        width: 76px;
+        background-color: #F5B7B1;
+		border: 2px solid #000;
+        left: 15px;
+        top: 100px;
+}
+#line_port1_divi1 {
+        position: absolute;
+        height: 2.5px;
+        width: 24px;
+        background-color: #000;
+        left: 90px;
+        top: 118px;
+}
+
+#right_divi1{
+		position: absolute;
+		border: solid black;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		left: 104px;
+		top: 115px;
+}
+#divi1 {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background-color: #F2F3F4;
+		border: 2px solid #000;
+        left: 115px;
+        top: 80px;
+}
+
+#circleimg1{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	left: 255px;
+	top: 173px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#circleimg1:hover{
+	transform: scale(1.05);
+}
+
+.T11 {
+	position: absolute;
+	left: 227px;
+	top: 190px;
+}
+
+#T1 {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: #F8C471;
+	border: 2px solid #000;
+	left: 310px;
+	top: 192px;
+}
+#dc1{
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 350px;
+	top: 192px;
+
+}
+
+#line_divi1_cs1_1 {
+        position: absolute;
+        height: 2.5px;
+        width: 95px;
+        background-color: #000;
+        left: 195px;
+        top: 150px;
+}
+
+#line_divi1_cs1_2 {
+	position: absolute;
+	height: 20px;
+	width: 2.5px;
+	background-color: #000;
+	left: 288px;
+	top: 150px;
+}
+
+#down_cs1{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  	left: 284.5px;
+	top: 162px;
+
+}
+#line_cs1_T1{
+	position: absolute;
+	height: 2.5px;
+	width: 15px;
+	background-color: #000;
+	left:240px;
+	top: 207px;
+
+}
+#line_cs1_dc1{
+	position: absolute;
+	height: 2.5px;
+	width: 23px;
+	background-color: #000;
+	left: 325px;
+	top: 207px;
+}
+#right_dc1{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	left: 339px;
+	top: 203.5px;
+}
+
+#port1_text{
+	color:black;
+	text-align: center;
+	vertical-align: middle;
+	margin: 8px 7px 6px;
+	font-size: 13px;
+}
+
+#divi1_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+}
+
+#T1_text{
+	color:rgb(0, 0, 0);
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#dc1_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+/* ------------------------------------  */
+
+#line_divi1_cs2_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 290px;
+	background-color: #000;
+	left: 195px;
+	top: 132px;
+}
+#line_divi1_cs2_2 {
+	position: absolute;
+	height: 38px;
+	width: 2.5px;
+	background-color: #000;
+	left: 484px;
+	top: 132px;
+}
+#down_cs2{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  	left: 481px;
+	top: 161px;
+
+}
+
+#circleimg2{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	left: 450px;
+	top: 173px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#circleimg2:hover{
+	transform: scale(1.05);
+}
+
+.T22 {
+	position: absolute;
+	left: 420px;
+	top: 190px;
+}
+
+#T2 {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: #F8C471;
+	border: 2px solid #000;
+	left: 590px;
+	top: 192px;
+}
+#dc2{
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 545px;
+	top: 192px;
+
+}
+
+
+#T2_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#dc2_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_cs2_T2{
+	position: absolute;
+	height: 2.5px;
+	width: 17px;
+	background-color: #000;
+	left: 433px;
+	top: 207px;
+
+}
+#line_cs2_dc2{
+	position: absolute;
+	height: 2.5px;
+	width: 23px;
+	background-color: #000;
+	left: 520px;
+	top: 207px;
+}
+#right_dc2{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	left: 534px;
+	top: 203.5px;
+}
+
+/* ------------------------------------  */
+
+#line_divi1_cs3_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 486px;
+	background-color: #000;
+	left: 195px;
+	top: 117px;
+}
+
+#line_divi1_cs3_2 {
+	position: absolute;
+	height: 52px;
+	width: 2.5px;
+	background-color: #000;
+	left: 679px;
+	top: 118px;
+}
+
+#down_cs3{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  	left: 676px;
+	top: 161px;
+
+}
+
+#circleimg3{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	left: 645px;
+	top: 173px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+
+#circleimg3:hover{
+	transform: scale(1.05);
+}
+
+.T33 {
+	position: absolute;
+	left: 615px;
+	top: 190px;
+}
+
+#T3 {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: #F8C471;
+	border: 2px solid #000;
+	left: 870px;
+	top: 192px;
+}
+#acu{
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 740px;
+	top: 192px;
+
+}
+
+#T3_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#acu_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_cs3_T3{
+	position: absolute;
+	height: 2.5px;
+	width: 17px;
+	background-color: #000;
+	left: 628px;
+	top: 207px;
+
+}
+#line_cs3_acu{
+	position: absolute;
+	height: 2.5px;
+	width: 23px;
+	background-color: #000;
+	left: 715px;
+	top: 207px;
+}
+#right_acu{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	left: 730px;
+	top: 203.5px;
+}
+
+/* ------------------------------------  */
+
+.T44 {
+	position: absolute;
+	left: 795px;
+	top: 190px;
+}
+
+#circleimg4{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	left: 825px;
+	top: 173px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+
+#circleimg4:hover{
+	transform: scale(1.05);
+}
+
+#line_cs4_T4{
+	position: absolute;
+	height: 2.5px;
+	width: 17px;
+	background-color: #000;
+	left: 808px;
+	top: 207px;
+
+}
+#line_cs4_amp{
+	position: absolute;
+	height: 2.5px;
+	width: 15px;
+	background-color: #000;
+	left: 895px;
+	top: 207px;
+}
+#right_amp{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	left: 902px;
+	top: 203.5px;
+}
+
+#amp{
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 913px;
+	top: 188px;
+}
+
+
+#T4_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#amp_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_divi1_cs4_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 666px;
+	background-color: #000;
+	left: 195px;
+	top: 104px;
+}
+
+#line_divi1_cs4_2 {
+	position: absolute;
+	height: 64px;
+	width: 2.5px;
+	background-color: #000;
+	left: 859px;
+	top: 106px;
+}
+#down_cs4{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  	left: 856px;
+	top: 161px;
+
+}
+
+
+#line_divi2_cs4_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 666px;
+	background-color: #000;
+	left: 195px;
+	top: 316px;
+}
+
+
+#line_divi2_cs4_2 {
+	position: absolute;
+	height: 72px;
+	width: 2.5px;
+	background-color: #000;
+	left: 859px;
+	top: 244px;
+}
+#up_cs4{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 856px;
+	top: 244px;
+}
+/* ------------------------------------  */
+
+.T55 {
+	position: absolute;
+	left: 975px;
+	top: 190px;
+}
+
+#circleimg5{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	left: 1005px;
+	top: 173px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+
+#circleimg5:hover{
+	transform: scale(1.05);
+}
+
+#line_cs5_T5{
+	position: absolute;
+	height: 2.5px;
+	width: 17px;
+	background-color: #000;
+	left: 988px;
+	top: 207px;
+
+}
+#line_cs5_aupc{
+	position: absolute;
+	height: 2.5px;
+	width: 15px;
+	background-color: #000;
+	left: 1075px;
+	top: 207px;
+}
+#right_aupc{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	left: 1083px;
+	top: 203.5px;
+}
+
+#aupc{
+	position: absolute;
+	height: 30px;
+	width: 45px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 1094px;
+	top: 192px;
+}
+
+
+#T5_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#aupc_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+
+#line_divi1_cs5_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 845px;
+	background-color: #000;
+	left: 195px;
+	top: 90px;
+}
+
+#line_divi1_cs5_2 {
+	position: absolute;
+	height: 80px;
+	width: 2.5px;
+	background-color: #000;
+	left: 1040px;
+	top: 90px;
+}
+#down_cs5{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  	left: 1036.5px;
+	top: 161px;
+
+}
+
+
+#line_divi2_cs5_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 845px;
+	background-color: #000;
+	left: 195px;
+	top: 330px;
+}
+
+
+#line_divi2_cs5_2 {
+	position: absolute;
+	height: 88px;
+	width: 2.5px;
+	background-color: #000;
+	left: 1040px;
+	top: 244px;
+}
+#up_cs5{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 1036.5px;
+	top: 244px;
+}
+
+/* ------------------------------------  */
+
+#port2 {
+        position: absolute;
+        height: 36px;
+        width: 76px;
+        background-color: #F5B7B1;
+		border: 2px solid #000;
+        left: 15px;
+        top: 280px;
+}    
+    
+#line_port2_divi2 {
+	position: absolute;
+	height: 2.5px;
+	width: 24px;
+	background-color: #000;
+	left: 90px;
+	top: 300px;
+}
+#right_divi2{
+		position: absolute;
+		border: solid black;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		left: 104px;
+		top: 297px;
+}		
+
+#divi2 {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background-color: #F2F3F4;
+		border: 2px solid #000;
+        left: 115px;
+        top: 260px;
+}
+
+#line_divi2_cs1_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 95px;
+	background-color: #000;
+	left: 195px;
+	top: 270px;
+}
+#line_divi2_cs1_2 {
+	position: absolute;
+	height: 25px;
+	width: 2.5px;
+	background-color: #000;
+	left: 288px;
+	top: 245px;
+}
+
+#up_cs1{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 284.5px;
+	top: 245px;
+}
+
+#line_divi2_cs2_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 290px;
+	background-color: #000;
+	left: 195px;
+	top: 286px;
+}
+#line_divi2_cs2_2 {
+	position: absolute;
+	height: 42px;
+	width: 2.5px;
+	background-color: #000;
+	left: 485px;
+	top: 246px;
+}
+#up_cs2{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 482px;
+	top: 245px;
+}
+
+#line_divi2_cs3_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 486px;
+	background-color: #000;
+	left: 195px;
+	top: 302px;
+}
+
+
+#line_divi2_cs3_2 {
+	position: absolute;
+	height: 60px;
+	width: 2.5px;
+	background-color: #000;
+	left: 679px;
+	top: 244px;
+}
+#up_cs3{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 676px;
+	top: 244px;
+}
+
+
+/* ------------------------------------  */
+
+#cs1_text{
+	position: absolute;
+	color:rgb(44, 44, 44);
+	font-size: 13px;	
+	font-weight: bold;
+	left: 310px;
+	top: 242px;
+}
+#cs2_text{
+	position: absolute;
+	color:rgb(44, 44, 44);
+	font-size: 13px;	
+	font-weight: bold;
+	left: 508px;
+	top: 242px;
+}
+#cs3_text{
+	position: absolute;
+	color:rgb(44, 44, 44);
+	font-size: 13px;	
+	font-weight: bold;
+	left: 698px;
+	top: 242px;
+}
+#cs4_text{
+	position: absolute;
+	color:rgb(44, 44, 44);
+	font-size: 13px;	
+	font-weight: bold;
+	left: 878px;
+	top: 242px;
+}
+#cs5_text{
+	position: absolute;
+	color:rgb(44, 44, 44);
+	font-size: 13px;	
+	font-weight: bold;
+	left: 1058px;
+	top: 242px;
+}
+
+/* ------------------------------------  */
+
+/* Setting popup*/
+
+/* The Close Button */
+  .close1 {
+	color:rgb(255, 255, 255);
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	transform: scale(1);
+	transition: 0.2s;
+  
+  }
+  
+  .close1:hover,
+  .close1:focus {
+	text-decoration: none;
+	cursor: pointer;
+	transform: scale(1.2);
+  }
+
+
+  /* The Close Button */
+  .close1 {
+	color:rgb(255, 255, 255);
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	transform: scale(1);
+	transition: 0.2s;
+  
+  }
+  
+  .close1:hover,
+  .close1:focus {
+	text-decoration: none;
+	cursor: pointer;
+	transform: scale(1.2);
+  }
+
+/* About popup*/
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	width: 500px;
+  }
+  
+  /* The Close Button */
+  .close2 {
+	color:rgb(255, 255, 255);
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	transform: scale(1);
+	transition: 0.2s;
+  
+  }
+  
+  .close2:hover,
+  .close2:focus {
+	text-decoration: none;
+	cursor: pointer;
+	transform: scale(1.2);
+  }
+
+  .modeldiv1 {
+	  background: linear-gradient(to bottom, #028fcf 0%,#283b93 100%);
+	  width:100%;
+	  margin:0;
+  }
+  .modeldiv2{
+  padding: 5px 15px 10px 15px;
+  }
+  #iptable1{
+	  display:block;
+	  margin: 0 20px 0 20px;
+  }
+  #iptable1 tr td{
+	  width:5%;
+	 
+  }
+
+  .modeltext tr td {
+	  padding: 3px 3px 3px 6px;
+	  margin: 0;
+  }
+
+/* ---------------------------------------------------*/
+
+#c1{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	background-color: #ffffff;
+	border: 3px solid #000;
+	left: 80px;
+	top: 160px;
+	border-radius: 50%;
+}
+
+#c2{
+	width: 80px;
+    height: 40px; /* as the half of the width */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 60px;
+    border: 3px solid #000;
+    border-bottom: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+</style>
+</html>

@@ -1,0 +1,674 @@
+/*  All Titels CSS Codes*/
+#h3css{
+	padding: 6px 0 0 10px ;
+	vertical-align: middle;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400
+}
+
+/*  Set IP Address CSS Codes*/
+
+#iptable{
+	display:block;
+	margin: 20px 0 0 10px;
+}
+#iptable tr td{
+	padding:0 0 6px 5px;
+}
+
+.ipinputtag {
+	padding: 1px 2px;
+	display:inline-block;
+	border:2px solid #ccc;
+	border-radius:4px;
+	border-color: #ffff;
+	background-color: #ffff;
+	
+}
+
+
+/* ************************************** */
+#editbtn{
+	display: inline-block;
+	border: none;
+	color: black;
+	width: 55px;
+	padding: 5px 10px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #ccd1d1;
+	border-radius: 4px;
+	float:right;
+	/*margin-right:362px;*/
+}
+#exitbtn{
+	display:block;
+	border: none;
+	color: black;
+	width: 60px;
+	padding: 5px 12px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #ccd1d1;
+	border-radius: 5px;
+	
+	
+}
+#setipbtn{
+	display:block;
+	border: none;
+	color: #fff;
+	padding: 5px 12px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #028fcf 0%,#283b93 100%);
+	border-radius: 5px;
+	transform: scale(1);
+	transition: 0.1s;
+	
+}
+#setipbtn:hover{
+        transform: scale(1.01);
+}
+
+/*  Control Redundancy Mode circle CSS Codes*/
+
+#auto{
+	display: inline-block;
+	border: none;
+	color: #fff;
+	padding: 6px 10px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #028fcf;
+	border-radius: 200px;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#auto:hover{
+        transform: scale(1.1);
+}
+
+#manual{
+	display: inline-block;
+	border: none;
+	color: #fff;
+	padding: 6px 10px;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 16px;
+	cursor: pointer;
+	background-color: #028fcf;
+	border-radius: 200px;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#manual:hover{
+        transform: scale(1.1);
+}
+
+
+#automan {
+	height: 90px;
+	width: 90px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	margin:0 auto;
+}
+    
+/*  MIMIC GUI Boxes CSS Codes*/
+
+#myBtn3:focus
+{
+  color:#fff;
+}
+
+#mybtn{
+	border: 0;
+}
+
+#port1 {
+        position: absolute;
+        height: 35px;
+        width: 90px;
+        background-color: #A2D9CE;
+		border: 2px solid #000;
+        left: 35px;
+        top: 100px;
+}
+#line_port1_divi1 {
+        position: absolute;
+        height: 2.5px;
+        width: 80px;
+        background-color: #0BDA51;
+        left: 125px;
+        top: 118px;
+}
+#divi1 {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background-color: #F2F3F4;
+		border: 2px solid #000;
+        left: 205px;
+        top: 80px;
+}
+
+#circleimg1{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	left: 365px;
+	top: 168px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#circleimg1:hover{
+	transform: scale(1.05);
+}
+
+#T1 {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 310px;
+	top: 192px;
+}
+#dc1{
+	position: absolute;
+	height: 30px;
+	width: 60px;
+	background-color: #A9DFBF;
+	border: 2px solid #000;
+	left: 470px;
+	top: 192px;
+
+}
+
+#line_divi1_cs1_1 {
+        position: absolute;
+        height: 2.5px;
+        width: 120px;
+        background-color: #0BDA51;
+        left: 285px;
+        top: 140px;
+}
+
+#line_divi1_cs1_2 {
+	position: absolute;
+	height: 28px;
+	width: 2.5px;
+	background-color: #0BDA51;
+	left: 405px;
+	top: 140px;
+}
+#line_cs1_T1{
+	position: absolute;
+	height: 2.5px;
+	width: 25px;
+	background-color: #FFEA00;
+	left: 340px;
+	top: 207px;
+
+}
+#line_cs1_dc1{
+	position: absolute;
+	height: 2.5px;
+	width: 25px;
+	background-color: #0BDA51;
+	left: 445px;
+	top: 207px;
+}
+
+#port1_text{
+	color:black;
+	text-align: center;
+	vertical-align: middle;
+	margin: 8px 7px 6px;
+	font-size: 16px;
+}
+
+#divi1_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+}
+
+#T1_text{
+	color:rgb(0, 0, 0);
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#dc1_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+/* ------------------------------------  */
+
+#line_divi1_cs2_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 400px;
+	background-color: #0BDA51;
+	left: 285px;
+	top: 120px;
+}
+#line_divi1_cs2_2 {
+	position: absolute;
+	height: 48px;
+	width: 2.5px;
+	background-color: #0BDA51;
+	left: 685px;
+	top: 120px;
+}
+
+#circleimg2{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	left: 645px;
+	top: 168px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+#circleimg2:hover{
+	transform: scale(1.05);
+}
+
+#T2 {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 590px;
+	top: 192px;
+}
+#dc2{
+	position: absolute;
+	height: 30px;
+	width: 60px;
+	background-color: #A9DFBF;
+	border: 2px solid #000;
+	left: 750px;
+	top: 192px;
+
+}
+
+#T2_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#dc2_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_cs2_T2{
+	position: absolute;
+	height: 2.5px;
+	width: 25px;
+	background-color: #FFEA00;
+	left: 620px;
+	top: 207px;
+
+}
+#line_cs2_dc2{
+	position: absolute;
+	height: 2.5px;
+	width: 25px;
+	background-color: #0BDA51;
+	left: 725px;
+	top: 207px;
+}
+
+/* ------------------------------------  */
+
+#line_divi1_cs3_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 680px;
+	background-color: #0BDA51;
+	left: 285px;
+	top: 100px;
+}
+
+#line_divi1_cs3_2 {
+	position: absolute;
+	height: 68px;
+	width: 2.5px;
+	background-color: #0BDA51;
+	left: 965px;
+	top: 100px;
+}
+
+#circleimg3{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	left: 925px;
+	top: 168px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+
+#circleimg3:hover{
+	transform: scale(1.05);
+}
+
+#T3 {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 870px;
+	top: 192px;
+}
+#acu{
+	position: absolute;
+	height: 30px;
+	width: 60px;
+	background-color: #A9DFBF;
+	border: 2px solid #000;
+	left: 1030px;
+	top: 192px;
+
+}
+
+#T3_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#acu_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_cs3_T3{
+	position: absolute;
+	height: 2.5px;
+	width: 25px;
+	background-color: #FFEA00;
+	left: 900px;
+	top: 207px;
+
+}
+#line_cs3_acu{
+	position: absolute;
+	height: 2.5px;
+	width: 25px;
+	background-color: #0BDA51;
+	left: 1005px;
+	top: 207px;
+}
+
+/* ------------------------------------  */
+
+#port2 {
+        position: absolute;
+        height: 36px;
+        width: 90px;
+        background-color: #A2D9CE;
+		border: 2px solid #000;
+        left: 35px;
+        top: 280px;
+}    
+    
+#line_port2_divi2 {
+	position: absolute;
+	height: 2.5px;
+	width: 80px;
+	background-color: #0BDA51;
+	left: 125px;
+	top: 300px;
+}		
+
+#divi2 {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background-color: #F2F3F4;
+		border: 2px solid #000;
+        left: 205px;
+        top: 260px;
+}
+
+#line_divi2_cs1_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 122px;
+	background-color: #FFEA00;
+	left: 285px;
+	top: 280px;
+}
+#line_divi2_cs1_2 {
+	position: absolute;
+	height: 32px;
+	width: 2.5px;
+	background-color: #FFEA00;
+	left: 405px;
+	top: 248px;
+}
+
+#line_divi2_cs2_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 400px;
+	background-color: #FFEA00;
+	left: 285px;
+	top: 300px;
+}
+#line_divi2_cs2_2 {
+	position: absolute;
+	height: 54px;
+	width: 2.5px;
+	background-color: #FFEA00;
+	left: 685px;
+	top: 248px;
+}
+
+#line_divi2_cs3_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 680px;
+	background-color: #FFEA00;
+	left: 285px;
+	top: 320px;
+}
+
+#line_divi2_cs3_2 {
+	position: absolute;
+	height: 74px;
+	width: 2.5px;
+	background-color: #FFEA00;
+	left: 965px;
+	top: 248px;
+}
+
+/* Setting popup*/
+
+/* The Close Button */
+  .close1 {
+	color:rgb(255, 255, 255);
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	transform: scale(1);
+	transition: 0.2s;
+  
+  }
+  
+  .close1:hover,
+  .close1:focus {
+	text-decoration: none;
+	cursor: pointer;
+	transform: scale(1.2);
+  }
+
+
+  /* The Close Button */
+  .close1 {
+	color:rgb(255, 255, 255);
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	transform: scale(1);
+	transition: 0.2s;
+  
+  }
+  
+  .close1:hover,
+  .close1:focus {
+	text-decoration: none;
+	cursor: pointer;
+	transform: scale(1.2);
+  }
+
+/* About popup*/
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	width: 500px;
+  }
+  
+  /* The Close Button */
+  .close2 {
+	color:rgb(255, 255, 255);
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	transform: scale(1);
+	transition: 0.2s;
+  
+  }
+  
+  .close2:hover,
+  .close2:focus {
+	text-decoration: none;
+	cursor: pointer;
+	transform: scale(1.2);
+  }
+
+  .modeldiv1 {
+	  background: linear-gradient(to bottom, #028fcf 0%,#283b93 100%);
+	  width:100%;
+	  margin:0;
+  }
+  .modeldiv2{
+  padding: 5px 15px 10px 15px;
+  }
+  #iptable1{
+	  display:block;
+	  margin: 0 20px 0 20px;
+  }
+  #iptable1 tr td{
+	  width:5%;
+	 
+  }
+
+  .modeltext tr td {
+	  padding: 3px 3px 3px 6px;
+	  margin: 0;
+  }
+
+/* ---------------------------------------------------*/
+
+
+
+#c1{
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	background-color: #ffffff;
+	border: 3px solid #000;
+	left: 80px;
+	top: 160px;
+	border-radius: 50%;
+}
+
+#c2{
+	width: 80px;
+    height: 40px; /* as the half of the width */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 60px;
+    border: 3px solid #000;
+    border-bottom: 0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

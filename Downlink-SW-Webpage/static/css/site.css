@@ -1,0 +1,42 @@
+.glyphicon
+{
+    margin-right:4px !important; /*override*/
+}
+
+.pagination .glyphicon
+{
+    margin-right:0px !important; /*override*/
+}
+
+.pagination a
+{
+    color:#555;
+}
+
+.panel ul
+{
+    padding:0px;
+    margin:0px;
+    list-style:none;
+/*    height: auto !important;*/
+}
+
+.news-item
+{
+    padding:0px 0px;
+    margin:0px;
+/*    border-bottom:1px dotted #555; */
+}
+.panel-default {
+    border-color: transparent;
+}
+.panel-footer {
+    padding: 10px 15px;
+    background-color: transparent;
+    border-top: 1px solid transparent;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.pagination>li>a{color: #818181;}
+.pagination>li>a:hover{color: #818181;}
+.pagination>li>a, .pagination>li>span{margin-left: 6px;}
