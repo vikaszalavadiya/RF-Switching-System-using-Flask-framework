@@ -2,28 +2,25 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<!--<link rel="icon" href="{{ url_for('static', filename='img/pspl1.png') }}"/> -->
-		<link rel="icon" href="static/img/pspl1.png"/>
+		<link rel="icon" href="{{ url_for('static', filename='img/pspl1.png') }}"/> 
+		<!--<link rel="icon" href="static/img/pspl1.png"/>-->
 		<title>PSPL</title>
         <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=yes">
-
-		<!-- Use for RPi -->
-        <!--<link href="{{ url_for('static', filename='css/pspl3.css') }}" type="text/css" rel="stylesheet">-->
-        <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css" rel="stylesheet">
-        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+        <!--<link href="{{ url_for('static', filename='css/pspl3.css') }}" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">        
         <link href="{{ url_for('static', filename='css/site.css') }}" type="text/css" rel="stylesheet">
         <link href="{{ url_for('static', filename='css/jquery-ui.css') }}" type="text/css" rel="stylesheet">
         <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
-        <script src="{{ url_for('static', filename='js/jquery-1.10.1.min.js') }}"  type="text/javascript"></script>
-        <script src="{{ url_for('static', filename='js/bootstrap.js') }}"  type="text/javascript"></script>
+        <script src="{{ url_for('static', filename='js/jquery.js') }}"  type="text/javascript"></script>
+		<link href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" rel="stylesheet">
+		<script src="{{ url_for('static', filename='js/bootstrap.js') }}"  type="text/javascript"></script>
         <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"  type="text/javascript"></script>
-        <script src="{{ url_for('static', filename='js/jquery.flexisel.js') }}"  type="text/javascript"></script>
-        <script src="{{ url_for('static', filename='js/jquery.bootstrap.newsbox.js') }}"  type="text/javascript"></script>
-        <script src="{{ url_for('static', filename='js/jquery.js') }}"  type="text/javascript"></script> -->
-
+		<script src="{{ url_for('static', filename='js/jquery.bootstrap.newsbox.js') }}"  type="text/javascript"></script>
+		<script src="{{ url_for('static', filename='js/jquery-1.10.1.min.js') }}"  type="text/javascript"></script>
+		<script src="{{ url_for('static', filename='js/jquery.flexisel.js') }}"  type="text/javascript"></script> -->
         <!-- Use for windows PC for Editing -->
-        <link href="static/css/pspl.css" type="text/css" rel="stylesheet"> 
+        <link href="static/css/pspl.css" type="text/css" rel="stylesheet">
 		<script src="static/js/canvas.js"  type="text/javascript"></script>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="static/css/bootstrap.css" type="text/css" rel="stylesheet">
@@ -39,7 +36,7 @@
         <script src="static/js/jquery.js"  type="text/javascript"></script>
 		
         
-		<script type="text/javascript">var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
+	<script type="text/javascript">var $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};</script>
     </head>
     <body>
         <header>
@@ -47,7 +44,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="social">             
+                            <div class="social">
+                                
                             </div>
                         </div>
                     </div>
@@ -65,20 +63,7 @@
 								<div class="menu">
 									<nav class="navbar navbar-default">
 										<div class="container-fluid">
-											<ul class="nav navbar-nav">
-												<li>
-													<a id="myBtn1" href="javascript:networkfunc()" >Network</a>
-												</li>
-												<li>
-													<a id="myBtn2">About</a>
-												</li>
-												
-												
-												<!--<li style="color: white;">
-													<a href="pdf/manual.pdf" target="_blank" id="myBtn3">User Manual</a>
-												</li>-->
-												
-											</ul>
+										
 										</div>
 										<!-- Setting Window -->
 										<div id="myModal1" class="modal">
@@ -86,41 +71,14 @@
 											<!-- Modal content -->
 											<div class="modal-content">
 												<div class="modeldiv1">
-													<table id="iptable1">
-														<tr>
-															<td><h3 style="color: white; float: right;">Network</h3></td>
-															<td><span class="close1">&times;</span></td>
-														</tr>
-													</table>
+											
 											
 												</div>
 												<div class="modeldiv2">
 													<h4><b>IP Configuration</b></h4>
 													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
 													<form name="myipconfig" action="" method="post" onsubmit = "return validateipaddress()">
-													<table class="modeltext">
-														<tr>
-															<td><b>IP Address</b></td>
-															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="ipadd" autocomplete="off" maxlength="15" size="12" name="ipaddress" required value="{{webipaddress}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))"/></td>
-															<td style="padding-left: 120px;"><button type="button" id="editbtn" onclick="valueenable()">Edit</button></td>
-														</tr>
-														<tr>
-															<td><b>Gateway</b></td>
-															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="gateway" autocomplete="off" maxlength="15" size="12" name="gatewayadd" required value="{{webgatewayadd}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))" /></td>
-														</tr>
-														<tr>
-															<td><b>Subnet Mask</b></td>
-															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="subnet" autocomplete="off" maxlength="15" size="12" name="subnetmask" required value="{{websubnetmask}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))" /></td>
-														</tr>
-													</table>
-													<br>
-													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
-													<table style=" margin-left: auto; margin-right: auto;">
-														<tr>
-															<td style="padding: 0 20px 0 20px;"><button type="button" id="exitbtn" onclick="exitmodelfunction()">Exit</button></td>
-															<td style="padding: 0 20px 0 20px; "><input name="btnval" id="setipbtn" type="submit" value="Apply" onclick="postfunction4()"></td>	
-														</tr>
-													</table>
+													
 													</form>													
 												</div>
 											</div>
@@ -137,45 +95,16 @@
 															<td><span class="close2">&times;</span></td>
 														</tr>
 													</table>
+											
 												</div>
 												<div class="modeldiv2">
 													<h4>Product</h4>
 													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
-													<table class="modeltext">
-														<tr>
-															<td><b>Product Name</b></td>
-															<td><b>:</b> Ku-Band RF Uplink Switching Unit</td>
-														</tr>
-														<tr>
-															<td><b>Model Number</b></td>
-															<td><b>:</b> COSW33Ku</td>
-														</tr>
-														<tr>
-															<td><b>Serial Number</b></td>
-															<td><b>:</b>  </td>
-														</tr>
-														<tr>
-															<td><b>Firmware Version</b></td>
-															<td><b>:</b> 2.1.0</td>
-														</tr>
-													</table>
+
 													<br>
 													<h4>Manufacturer</h4>
 													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
-													<table class="modeltext">
-														<tr>
-															<td><b>Company Name</b></td>
-															<td><b>:</b> PranisKom Solutions Private Limited</td>
-														</tr>
-														<tr>
-															<td><b>E-mail</b></td>
-															<td><b>:</b> sales@praniskom.com</td>
-														</tr>
-														<tr>
-															<td><b>Phone</b></td>
-															<td><b>:</b> +91 265 2985335</td>
-														</tr>
-													</table>
+										
 												</div>
 											</div>
 										</div>			
@@ -193,58 +122,25 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="partred">
-                                <h2 style="font-size: 17px"><span><b>Ku-Band RF Uplink Switching Unit</b></span><hr style="width: 100%; height: 0.5px; background-color: #d2300e;" ></h2>
+                                <h2 style="font-size: 17px"><span><b>Ku-Band RF Downlink Switching Unit</b></span><hr style="width: 100%; height: 0.5px; background-color: #d2300e;" ></h2>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="vikas">
                         <div class="satelite">
 				            <div class="comu">			
-					           <div class="row">     
+					           <div class="row">
+					               
 							   <div class="col-lg-12 col-sm-12 ">
 								<div class="comuinner" style="text-align:left; margin-left:auto; margin-right:auto;"> 
 									<h3 id="h3css">Current Status</h3>
-									<div class="col-md-8">					
-										   <table id="iptable">
-										  	<form action ="" method ="post">		
-										   	<tr>
-												<td><p>Waveguide Switch 1</p></td>
-												<td><p>:</p></td>
-											 	<td><b><p id="webws1">{{webws1}}</p></b></td>
-										  	</tr>
-										  	<tr>
-											 	<td><p>Waveguide Switch 2</p></td>
-												<td><p>:</p></td>
-											 	<td><b><p id="webws2">{{webws2}}</p></b></td>
-										  	</tr>
-											<tr>
-												<td><p>Waveguide Switch 3</p></td>
-											    <td><p>:</p></td>
-												<td><b><p id="webws3">{{webws3}}</p></b></td>
-											 </tr>			 	
-										  	</form>
-										   </table>
-										   <table id="iptable">
-											<form action ="" method ="post">						  
-											 <tr>
-											  <td><p>Coaxial Switch 1</p></td>
-											  <td><p>:</p></td>
-											   <td><b><p id="webcs1">{{webcs1}}</p></b></td>
-											</tr>
-											<tr>
-											   <td><p>Coaxial Switch 2</p></td>
-											  <td><p>:</p></td>
-											   <td><b><p id="webcs2">{{webcs2}}</p></b></td>
-											</tr>
-											<tr>
-												<td><p>Coaxial Switch 3</p></td>
-											   <td><p>:</p></td>
-												<td><b><p id="webcs3">{{webcs3}}</p></b></td>
-											 </tr>			   
-											</form>
-										 </table>				
+									<div class="col-md-6">
+										<font size="3" color="#5A5A5A">
+										   
+										</font>
 									</div>
-									<div class="col-md-4">
+									<div class="col-md-6">
 										<table id ="remote_table">
 											<tr>
 												<td ><p><span id="remote_circle"></span></p></td >
@@ -252,200 +148,78 @@
 											</tr>
 										</table>
 									</div>
+									
 								</div>
-			
+									
 								</div>
-								<!-- -----------------------------------  MIMIC Diagram  ------------------------------------------- -->
 								<div class="col-lg-12 col-sm-12 ">
 									<div class="comuinner" style="text-align:left; margin-left:auto; margin-right:auto;"> 
 										<h3 id="h3css">MIMIC GUI</h3> 
 										<div style="border: 0 solid #000; width:100%; margin:auto; height:380px;">
+											<div id="port1"><h3 id="port1_text">RX Port 1</h3></div>
+											  <div id="divi1"> <h3 id="divi1_text">Divider</h3> </div>
 
-											<div id="twta1"><p id="twta1_text">TWTA 1</p></div>
-											<div id="twta2"><p id="twta2_text">TWTA 2</p></div>
-											<div id="dl1"><p id="dl1_text">D/L</p></div>
-											<div id="line_dl1_wgsw1_1"></div>
-											<div id = "left_dl1"></div>
-
-											<div id="line_twta1_wgsw1_1"></div>
-											<div id="line_twta1_wgsw1_2"></div>
-											<div id = "down_wgsw1"></div>
-
-											<div id="line_twta2_wgsw3_1"></div>
-											<div id="right_wgsw3"></div>
-											<div id="up_wgsw1"></div>
-											<div id="line_wgsw3_wgsw1_1"></div>
+											<div id="line_port1_divi1"></div>
+											<div id="right_divi1"></div>
+											
+											<div id="line_divi1_cs1_1"></div>
+											<div id="line_divi1_cs1_2"></div>
+											<div id="down_cs1"></div>
+											<div id="line_cs1_T1"></div>
+											<div id="line_cs1_dc1"></div>
+											<div id="right_dc1"></div>
+											<p id="cs1_text">D/C-1</p>
 
 											<!-- ------- Circle 1 img --------- -->
-											<p id="wgsw1_text">WGS1</p>
-											<!-- -------------------------------------------------------->
-											<div id="line_twta2_wgsw3_1"></div>
-											<!-- -------------------------------------------------------->
-
-											<div id="line_wgsw2_cplr1_1"></div>
-											<div id="line_wgsw2_cplr1_2"></div>
-											<div id="right_cplr1"></div>
-
-											<div id="line_wgsw1_wgsw2_1"></div>
-											<div id="right_wgsw2"></div>
-										
-											<!-- ------- Circle 2 img --------- -->
-											<p id="wgsw2_text">WGS3</p>
-											
-											<!-- ------- Circle 3 img --------- -->
-											<p id="wgsw3_text">WGS2</p>
-											
-											<div id="line_wgsw2_cplr2_1"></div>
-											<div id="line_wgsw2_cplr2_2"></div>
-											<div id="line_wgsw2_cplr2_hc3"></div>
-											<div id="line_wgsw2_cplr2_3"></div>
-											<div id="right_cplr2"></div>
-
-											<div class="T55">
-												<div class="arrow1 t91"></div>
-												<div class="arrow1 t92"></div>
-												<div class="arrow1 t93"></div>
-											</div>
-											<div id="line_wgsw3_t5_1"></div>
-
-											<!-- ------- Circle 3 img  - CS1  --------- -->
-											<p id="cs1_text">CS1</p>
-											<div id="line_cs1_t2_1"></div>
-											<div class="T22">
+											<div class="T11">
 												<div class="arrow1 t91"></div>
 												<div class="arrow1 t92"></div>
 												<div class="arrow1 t93"></div>
 											</div>
 											
-											<div id="line_wgsw3_wgsw2_1"></div>
-											<div id="line_wgsw3_wgsw2_2"></div>
-											<div id="line_wgsw3_wgsw2_3"></div>
-											<div id="line_wgsw3_wgsw2_4"></div>
-											<div id="left_wgsw2"></div>
-											
-
-											<div id="cplr1"><p id="cplr1_text">Tx CPLR 1</p></div>
-											<div id="line_cs1_cplr1_1"></div>
-											<div id="down_cs1"></div>
-
-											<div id="line_cplr1_antenna_1"></div>
-											<div id="right_antenna1"></div>
-
-											<div id="cplr2"><p id="cplr2_text">Tx CPLR 2</p></div>
-											<div id="line_cs1_cplr2_1"></div>
-											<div id="up_cs1"></div>
-
-											<div id="line_cplr2_antenna_1"></div>
-											<div id="line_cplr2_antenna_2"></div>
-											<div id="line_cplr2_antenna_3"></div>
-											<div id="right_antenna2"></div>
-
-											<div id="TLT"><p id="TLT_text">TLT</p></div>
-											<p id="tlt_text_1">IN</p>
-											<p id="tlt_text_2">OUT</p>
-
-											<div id="line_cs1_tlt_1"></div>
-											<div id="line_cs1_tlt_1_hc3"></div>
-											<div id="line_cs1_tlt_2"></div>
-											<div id="right_tlt1"></div>
-
-											<div id="line_tlt_cs2_1"></div>
-											<div id="line_tlt_cs2_2"></div>
+											<!-- <div id="T1"> <h3 id="T1_text">T</h3> </div>-->
+											<div id="dc1"> <h3 id="dc1_text">D/C 1</h3> </div>
+											<!-- ------------------------------------------------------------------------------------------- -->
+											<div id="line_divi1_cs2_1"></div>
+											<div id="line_divi1_cs2_2"></div>
 											<div id="down_cs2"></div>
+											<p id="cs2_text">D/C-2</p>
 
-											<!-- ------- Circle 4 img - CS2  --------- -->
-											<p id="cs2_text">CS2</p>
-											<div id="line_cs2_t3_1"></div>
+											<div id="line_cs3_T3"></div>
+											<div id="line_cs3_acu"></div>
+											<div id="right_acu"></div>
 											<div class="T33">
 												<div class="arrow1 t91"></div>
 												<div class="arrow1 t92"></div>
 												<div class="arrow1 t93"></div>
 											</div>
+											
+											<!-- <div id="T3"> <h3 id="T3_text">T</h3> </div>-->
+											<div id="acu"> <h3 id="acu_text">ACU</h3> </div>
 
-											<div id="line_cs2_cs3_1"></div>
-											<div id="right_cs3"></div>
-
-											<div id="inject"><p id="inject_text">Inject Signal</p></div>
-											<div id="line_inject_cs2_1"></div>
-											<div id="line_inject_cs2_2"></div>
-											<div id="up_cs2"></div>
-
-											<!-- ------- Circle 5 img - CS3  --------- -->
-											<p id="cs3_text">CS3</p>
-											<div id="line_cs3_t4_1"></div>
-											<div class="T44">
-												<div class="arrow1 t91"></div>
-												<div class="arrow1 t92"></div>
-												<div class="arrow1 t93"></div>
-											</div>
-
-											<img id ="antenna" src="static/img/antenna1.png" alt="circle">
-											<p id="ant_text_1">Tx1</p>
-											<p id="ant_text_2">Tx2</p>
-											<p id="ant_text_3">Rx1</p>
-											<p id="ant_text_4">Rx2</p>
+											<!-- ------------------------------------------------------------------------------------------- -->
+											<div id="line_divi1_cs4_1"></div>
+											<div id="line_divi1_cs4_2"></div>
+											<div id="down_cs4"></div>
+											<p id="cs4_text">Line Amp.</p>
 
 
-											<div id="cplr3"><p id="cplr3_text">Rx CPLR 1</p></div>
-											<div id="cplr4"><p id="cplr4_text">Rx CPLR 2</p></div>
-											<div id="line_antenna_rxcplr1_1"></div>
 
-											<div id="line_antenna_cplr3_1"></div>
-											<div id="right_cplr3"></div>
-											<div id="line_cplr3_cs3_1"></div>
-											<div id="down_cs3"></div>
-											<div id="line_antenna_cplr4_1"></div>
-											<div id="line_antenna_cplr4_2"></div>
-											<div id="line_antenna_cplr4_hc"></div>
-											<div id="right_cplr4"></div>
-
-											<div id="line_cs3_cplr4_1"></div>
-											<div id="line_cs3_cplr4_2"></div>
-											<div id="line_cs3_cplr4_3"></div>
-											<div id="up_cplr4"></div>
-
-											<div id="line_cplr3_compx_1"></div>
-											<div id="right_compx_1"></div>
-
-											<div id="line_cplr4_compx_1"></div>
-											<div id="right_compx_2"></div>
-
-											<div id="compx"><p id="compx_text">1:2 LNA COMPX</p></div>
 
 											<!-- ------------------------------------------------------------------------------------------- -->
 
-											<!-- ------------ Upper imgs ------------------------------------------------------------- -->
-				
-											<form action ="" method ="post" onsubmit="return validate1(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="websw1" > <img id ="circleimg1" src="static/img/varc.png" alt="circle"></button>
-											</form>
+											<div id="line_divi1_cs5_1"></div>
+											<div id="line_divi1_cs5_2"></div>
+											<div id="down_cs5"></div>
+											<p id="cs5_text">AUPC</p>
 
-											<form action ="" method ="post" onsubmit="return validate2(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="websw2" > <img id ="circleimg2" src="static/img/varc.png" alt="circle"></button>
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate3(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="websw3" > <img id ="circleimg3" src="static/img/varc.png" alt="circle"></button>
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate4(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="websw4" > <img id ="circleimg4" src="static/img/varc.png" alt="circle"></button>
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate5(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="websw5" > <img id ="circleimg5" src="static/img/varc.png" alt="circle"></button>
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate6(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="websw6" > <img id ="circleimg6" src="static/img/varc.png" alt="circle"></button>
-											</form>
-											<!------------------------------------------------------------------------- -->
 											
-											</div>
 										</div>
+										
 									</div>	
 							</div>	
-						</div>		
+						</div>
+							   			
 					       </div>
 				        </div>
 			         </div>
@@ -494,15 +268,16 @@
 						</div>
 					</div>
 				</div>
+
 			</footer>
     </body>
     
 
-<!-- Right Click Disable-->
+<!-- Right Click Disable -->
+
 <script language="JavaScript">
     document.oncontextmenu =new Function("return false;")
-</script> 
-
+</script>
 
 
 <!--  Setting Popup  -->
@@ -534,15 +309,15 @@
 	}
 
 	function exitmodelfunction() {
-		//document.getElementById("ipadd").disabled = true;
-		//document.getElementById("gateway").disabled = true;
-		//document.getElementById("subnet").disabled = true;
-		//document.getElementById("ipadd").style.borderColor = "#ffff";
-		//document.getElementById("gateway").style.borderColor = "#ffff";
-		//document.getElementById("subnet").style.borderColor = "#ffff";
+		document.getElementById("ipadd").disabled = true;
+		document.getElementById("gateway").disabled = true;
+		document.getElementById("subnet").disabled = true;
+		document.getElementById("ipadd").style.borderColor = "#ffff";
+		document.getElementById("gateway").style.borderColor = "#ffff";
+		document.getElementById("subnet").style.borderColor = "#ffff";
 
-		//document.getElementById("setipbtn").disabled = true;
-		//document.getElementById("editbtn").innerHTML = "Edit"
+		document.getElementById("setipbtn").disabled = true;
+		document.getElementById("editbtn").innerHTML = "Edit"
 		
 		modal1.style.display = "none";
 	} 
@@ -578,28 +353,6 @@
 	}
 </script>
 
-<script>
-	
-function networkfunc () {
-	var getipadd = '{{webipaddress}}';
-	var getgateway = '{{webgatewayadd}}';
-	var getsubnet = '{{websubnetmask}}';
-	document.getElementById("ipadd").value = getipadd;
-	document.getElementById("gateway").value = getgateway;
-	document.getElementById("subnet").value = getsubnet;
-	
-	document.getElementById("ipadd").disabled = true;
-	document.getElementById("gateway").disabled = true;
-	document.getElementById("subnet").disabled = true;
-	document.getElementById("ipadd").style.borderColor = "#ffff";
-	document.getElementById("gateway").style.borderColor = "#ffff";
-	document.getElementById("subnet").style.borderColor = "#ffff";
-
-	document.getElementById("setipbtn").disabled = true;
-	document.getElementById("editbtn").innerHTML = "Edit"
-}
-	
-</script>
 
 
 
@@ -609,149 +362,111 @@ var green = '#0BDA51';
 var red = '#e74c3c';
 var yellow = '#FFEA00';
 
-var intervalID = setInterval(confunc,500);
+	
+	document.getElementById("converter1").style.color = '#5A5A5A';
+	document.getElementById("converter2").style.color = '#5A5A5A';
+	document.getElementById("tracking").style.color = '#5A5A5A';
+	document.getElementById("lineamp").style.color = '#5A5A5A';
+	document.getElementById("AUPC").style.color = '#5A5A5A';
+	
+	//document.getElementById("line_port1_divi1").style.backgroundColor = green;
+	//document.getElementById("line_port2_divi2").style.backgroundColor = green;
+	//document.getElementById("right_divi1").style.borderColor = green;
+	//document.getElementById("right_divi2").style.borderColor = green;
+	
+	//document.getElementById("line_cs1_dc1").style.backgroundColor = green;
+	//document.getElementById("right_dc1").style.borderColor = green;
 
-function confunc () {
-	$.getJSON($SCRIPT_ROOT + '/_load1',
-     	function(data) {
-		$('#lclrem_web').text(data.lclrem_web);
-		$('#webws1').text(data.webws1);
-		$('#webws2').text(data.webws2);
-		$('#webws3').text(data.webws3);
-		$('#webcs1').text(data.webcs1);
-		$('#webcs2').text(data.webcs2);
-		$('#webcs3').text(data.webcs3);
-        
-	});
-	
-	document.getElementById("webws1").style.color = '#5A5A5A';
-	document.getElementById("webws2").style.color = '#5A5A5A';
-	document.getElementById("webws3").style.color = '#5A5A5A';
-	document.getElementById("webcs1").style.color = '#5A5A5A';
-	document.getElementById("webcs2").style.color = '#5A5A5A';
-	document.getElementById("webcs3").style.color = '#5A5A5A';
-	
 	
 	if (document.getElementById("lclrem_web").innerHTML == "Remote mode"){
 		document.getElementById("remote_table").style.color = green1;
 		document.getElementById("remote_circle").style.backgroundColor = green1;
+		
 	}
 	else{
 		document.getElementById("remote_table").style.color = red;
 		document.getElementById("remote_circle").style.backgroundColor = red;
+		
 	}
 
-	if(document.getElementById("webws1").innerHTML == "Position 1"){
+
+	if(document.getElementById("converter1").innerHTML == "Position 1"){
 		document.getElementById('circleimg1').src="{{ url_for('static', filename='img/varc1.png') }}";
+		//document.getElementById("line_divi1_cs1_1").style.backgroundColor = green;
+		//document.getElementById("line_divi1_cs1_2").style.backgroundColor = green;
+		//document.getElementById("down_cs1").style.borderColor = green;
+	
 	}
-	else if (document.getElementById("webws1").innerHTML == "Position 2"){
+	else{
 		document.getElementById('circleimg1').src="{{ url_for('static', filename='img/varc2.png') }}";
+		//document.getElementById("line_divi1_cs1_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi1_cs1_2").style.backgroundColor = yellow;
+		//document.getElementById("down_cs1").style.borderColor = yellow;
+		//document.getElementById("line_divi2_cs1_1").style.backgroundColor = green;
+		//document.getElementById("line_divi2_cs1_2").style.backgroundColor = green;
+		//document.getElementById("up_cs1").style.borderColor = green;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/staticimg/varc2.png";	
 	}
-	else{
-		document.getElementById('circleimg1').src="{{ url_for('static', filename='img/varc.png') }}";
-	}
-	
-	//-----------------------
-	if(document.getElementById("webws2").innerHTML == "Position 1"){
+
+	if(document.getElementById("converter2").innerHTML == "Position 1"){
 		document.getElementById('circleimg2').src="{{ url_for('static', filename='img/varc1.png') }}";
+		//document.getElementById("line_divi1_cs2_1").style.backgroundColor = green;
+		//document.getElementById("line_divi1_cs2_2").style.backgroundColor = green;
+
 	}
-	else if (document.getElementById("webws2").innerHTML == "Position 2"){
+	else{
 		document.getElementById('circleimg2').src="{{ url_for('static', filename='img/varc2.png') }}";
-	}
-	else{
-		document.getElementById('circleimg2').src="{{ url_for('static', filename='img/varc.png') }}";
-	}
+		//document.getElementById("line_divi1_cs2_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi1_cs2_2").style.backgroundColor = yellow;
 	
-	//-----------------------
-	if(document.getElementById("webws3").innerHTML == "Position 1"){
+	}
+
+	if(document.getElementById("tracking").innerHTML == "Position 1"){
 		document.getElementById('circleimg3').src="{{ url_for('static', filename='img/varc1.png') }}";
-	}
-	else if (document.getElementById("webws3").innerHTML == "Position 2"){
-		document.getElementById('circleimg3').src="{{ url_for('static', filename='img/varc2.png') }}";
+		//document.getElementById("line_divi1_cs3_1").style.backgroundColor = green;
+		//document.getElementById("line_divi1_cs3_2").style.backgroundColor = green;
+		//document.getElementById("down_cs3").style.borderColor = green;
+		//document.getElementById("line_divi2_cs3_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi2_cs3_2").style.backgroundColor = yellow;
+		//document.getElementById("up_cs3").style.borderColor = yellow;
+		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/static/img/varc1.png";	
 	}
 	else{
-		document.getElementById('circleimg3').src="{{ url_for('static', filename='img/varc.png') }}";
-	}
+		document.getElementById('circleimg3').src="{{ url_for('static', filename='img/varc2.png') }}";
+		//document.getElementById("line_divi1_cs3_1").style.backgroundColor = yellow;
+		//document.getElementById("line_divi1_cs3_2").style.backgroundColor = yellow;
 	
-	//-----------------------
-	if(document.getElementById("webcs1").innerHTML == "Position 1"){
+	}
+
+	if(document.getElementById("lineamp").innerHTML == "Position 1"){
 		document.getElementById('circleimg4').src="{{ url_for('static', filename='img/varc1.png') }}";
 	}
-	else if (document.getElementById("webcs1").innerHTML == "Position 2"){
+	else{
 		document.getElementById('circleimg4').src="{{ url_for('static', filename='img/varc2.png') }}";
 	}
-	else{
-		document.getElementById('circleimg4').src="{{ url_for('static', filename='img/varc.png') }}";
-	}
-	
-	//-----------------------
-	if(document.getElementById("webcs2").innerHTML == "Position 1"){
+
+	if(document.getElementById("AUPC").innerHTML == "Position 1"){
 		document.getElementById('circleimg5').src="{{ url_for('static', filename='img/varc1.png') }}";
 	}
-	else if (document.getElementById("webcs2").innerHTML == "Position 2"){
+	else{
 		document.getElementById('circleimg5').src="{{ url_for('static', filename='img/varc2.png') }}";
 	}
-	else{
-		document.getElementById('circleimg5').src="{{ url_for('static', filename='img/varc.png') }}";
-	}
-	
-	//-----------------------
-	if(document.getElementById("webcs3").innerHTML == "Position 1"){
-		document.getElementById('circleimg6').src="{{ url_for('static', filename='img/varc1.png') }}";
-	}
-	else if (document.getElementById("webcs3").innerHTML == "Position 2"){
-		document.getElementById('circleimg6').src="{{ url_for('static', filename='img/varc2.png') }}";
-	}
-	else{
-		document.getElementById('circleimg6').src="{{ url_for('static', filename='img/varc.png') }}";
-	}
-	
 
-	
 }
 
 </script>
 <script>
 
-//document.getElementById("ipadd").disabled = true;
-//document.getElementById("gateway").disabled = true;
-//document.getElementById("subnet").disabled = true;
-//document.getElementById("ipadd").style.borderColor = "#ffff";
-//document.getElementById("gateway").style.borderColor = "#ffff";
-//document.getElementById("subnet").style.borderColor = "#ffff";
+document.getElementById("ipadd").disabled = true;
+document.getElementById("gateway").disabled = true;
+document.getElementById("subnet").disabled = true;
+document.getElementById("ipadd").style.borderColor = "#ffff";
+document.getElementById("gateway").style.borderColor = "#ffff";
+document.getElementById("subnet").style.borderColor = "#ffff";
 
-//document.getElementById("setipbtn").disabled = true;
-//document.getElementById("editbtn").innerHTML = "Edit";
+document.getElementById("setipbtn").disabled = true;
+document.getElementById("editbtn").innerHTML = "Edit";
 
-function valueenable () {
-
-	if (document.getElementById("editbtn").innerHTML=="Edit"){
-
-		document.getElementById("ipadd").disabled = false;
-		document.getElementById("gateway").disabled = false;
-		document.getElementById("subnet").disabled = false;
-		document.getElementById("ipadd").style.borderColor = "#8B8B8B";
-		document.getElementById("gateway").style.borderColor = "#8B8B8B";
-		document.getElementById("subnet").style.borderColor = "#8B8B8B";
-
-		document.getElementById("setipbtn").disabled = false;
-		document.getElementById("editbtn").innerHTML = "Close";
-	}
-	else {
-		document.getElementById("ipadd").disabled = true;
-		document.getElementById("gateway").disabled = true;
-		document.getElementById("subnet").disabled = true;
-		document.getElementById("ipadd").style.borderColor = "#ffff";
-		document.getElementById("gateway").style.borderColor = "#ffff";
-		document.getElementById("subnet").style.borderColor = "#ffff";
-
-		document.getElementById("setipbtn").disabled = true;
-		document.getElementById("editbtn").innerHTML = "Edit"
-
-	}
-	
-}
-</script>
 <script>
 
 function validateipaddress()
@@ -761,24 +476,14 @@ function validateipaddress()
 	var varsubnetmask = document.myipconfig.subnetmask.value;
 	
 	var ipformat = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-	
-	
 	if (varsubnetmask.match(ipformat)) {
-		modal1.style.display = "none";
 		
 	}
 	else {
 		alert("Invalide Subnetmask data !!!");
 		return false;
 	}
-	if (vargatewayadd.match(ipformat)) {
-		modal1.style.display = "none";
-		
-	}
-	else {
-		alert("Invalide Gateway Address data !!!");
-		return false;
-	}
+	
 	if (varipaddress.match(ipformat)) {
 		modal1.style.display = "none";
 		
@@ -787,6 +492,15 @@ function validateipaddress()
 		alert("Invalide IP Address data !!!");
 		return false;
 	}
+	if (vargatewayadd.match(ipformat)) {
+		
+	}
+	else {
+		alert("Invalide Gateway Address data !!!");
+		return false;
+	}
+	
+	
 }
 
 function validate1(form) {
@@ -817,15 +531,11 @@ function validate3(form) {
 		return false;
 	}	
 }
-function validate4(form) {
-	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
-		return confirm('Are you sure, Do you want to change Position?');
-	}
-	else{
-		alert("Equipment is not in Remote mode. Please use front panel to change Remote mode.");
-		return false;
-	}	
+
+function postfunction4() {
+	alert("Equipment will Restart. When you change IP Configuration.");	
 }
+
 function validate5(form) {
 	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
 		return confirm('Are you sure, Do you want to change Position?');
@@ -835,6 +545,7 @@ function validate5(form) {
 		return false;
 	}	
 }
+
 function validate6(form) {
 	if(document.getElementById("lclrem_web").innerHTML=="Remote mode"){
 		return confirm('Are you sure, Do you want to change Position?');
@@ -845,51 +556,9 @@ function validate6(form) {
 	}	
 }
 
-function postfunction4() {
-	alert("Equipment will Restart. When you change IP Configuration.");	
-}
-
 
 </script>
-
-
 <style>
-	
-/* ---------------  Arrows ----------------------- */  
-.arrow {
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-}
-
-
-/* ---------------  Terminator ----------------------- */  
-.t91 {
-	position: absolute;
-	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);	
-}
-.t92 {
-	position: absolute;
-	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);
-    margin-top:12px;
-}
-.t93 {
-	position: absolute;
-	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);
-    margin-top:24px;
-}
-
-.arrow1 {
-	border: solid #000000;
-	border-width: 0 3.5px 3.5px 0;
-	display: inline-block;
-	padding: 4px;
-}
-/* ----------------------------------- */ 
 
 
 /*  All Titels CSS Codes*/
@@ -906,13 +575,9 @@ function postfunction4() {
 #iptable{
 	display:block;
 	margin: 5px 0 0 0;
-	width: 50%;
-	float: left;
 }
 #iptable tr td{
 	padding:0 0 0 5px;
-	font-size: 14px;
-	color: #5A5A5A;
 }
 
 .ipinputtag {
@@ -935,7 +600,7 @@ function postfunction4() {
 
 #remote_table tr td {
    padding-left:10px;
-   font-size: 16px;
+   font-size: 18px;
 }
 
 #remote_circle{
@@ -946,120 +611,23 @@ function postfunction4() {
 	border-radius:50%;
 	margin:auto;
 }
-#webws1{
+#converter1{
 	color:#fff;
 }
-#webws2{
+#converter2{
 	color:#fff;
 }
-#webws3{
+#tracking{
 	color:#fff;
 }
-
-#webcs1{
+#lineamp{
 	color:#fff;
 }
-#webcs2{
+#AUPC{
 	color:#fff;
 }
-#webcs3{
-	color:#fff;
-}
-
 
 /* ************************************** */
-#editbtn{
-	display: inline-block;
-	border: none;
-	color: black;
-	width: 55px;
-	padding: 5px 10px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #ccd1d1;
-	border-radius: 4px;
-	float:right;
-	/*margin-right:362px;*/
-}
-#exitbtn{
-	display:block;
-	border: none;
-	color: black;
-	width: 60px;
-	padding: 5px 12px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background-color: #ccd1d1;
-	border-radius: 5px;
-	
-	
-}
-#setipbtn{
-	display:block;
-	border: none;
-	color: #fff;
-	padding: 5px 12px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background: linear-gradient(to bottom, #028fcf 0%,#283b93 100%);
-	border-radius: 5px;
-	transform: scale(1);
-	transition: 0.1s;
-	
-}
-#setipbtn:hover{
-        transform: scale(1.01);
-}
-
-/*  Control Redundancy Mode circle CSS Codes*/
-
-#auto{
-	display: inline-block;
-	border: none;
-	color: #fff;
-	padding: 6px 10px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background-color: #028fcf;
-	border-radius: 200px;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#auto:hover{
-        transform: scale(1.1);
-}
-
-#manual{
-	display: inline-block;
-	border: none;
-	color: #fff;
-	padding: 6px 10px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background-color: #028fcf;
-	border-radius: 200px;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#manual:hover{
-        transform: scale(1.1);
-}
-
 
 #automan {
 	height: 90px;
@@ -1069,12 +637,7 @@ function postfunction4() {
 	margin:0 auto;
 }
     
-/* ----------------------- MIMIC GUI Boxes CSS Codes  -----------------------------------*/
-:root{
-	--divcolor: #F5B7B1;
-	--termcolor: #B9770E; 
-}
-
+/*  MIMIC GUI Boxes CSS Codes*/
 
 #myBtn3:focus
 {
@@ -1085,590 +648,116 @@ function postfunction4() {
 	border: 0;
 }
 
-/* ------------------------------------ */
 
-
-#twta2 {
+#right_divi1{
+		position: absolute;
+		border: solid black;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		left: 104px;
+		top: 115px;
+}
+#divi1 {
         position: absolute;
-        height: 25px;
-        width: 60px;
-        background-color: var(--divcolor);;
+        height: 80px;
+        width: 80px;
+        background-color: #F2F3F4;
 		border: 2px solid #000;
-        left: 20px;
-        top: 274px;
-}
-#circleimg2{ 
-	position: absolute;
-	height: 65px;
-	width: 65px;
-	left: 148px;
-	top: 255px;
-	cursor: pointer;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#circleimg2:hover{
-	transform: scale(1.08);
-}
-
-#line_twta2_wgsw3_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 65px;
-	background-color: #000;
-	left: 80px;
-	top: 286px;
-}
-#right_wgsw3 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 138px;
-	top: 283px;
-}
-#line_wgsw3_wgsw1_1 {
-	position: absolute;
-	height: 45px;
-	width: 2.5px;
-	background-color: #000;
-	left: 180px;
-	top: 210px;
-}
-
-
-/* ------------------------------------ */
-
-#line_wgsw3_wgsw2_1{
-	position: absolute;
-	height: 20px;
-	width: 2.5px;
-	background-color: #000;
-	left: 180px;
-	top: 320px;
-}
-#line_wgsw3_wgsw2_2{
-	position: absolute;
-	height: 2.5px;
-	width: 187px;
-	background-color: #000;
-	left: 180px;
-	top: 340px;
-}
-
-#line_wgsw3_wgsw2_3{
-	position: absolute;
-	height: 170px;
-	width: 2.5px;
-	background-color: #000;
-	left: 365px;
-	top: 170px;
-}
-
-#line_wgsw3_wgsw2_4{
-	position: absolute;
-	height: 2.5px;
-	width: 30px;
-	background-color: #000;
-	left: 335px;
-	top: 170px;
-}
-
-#left_wgsw2 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(135deg);
-	-webkit-transform: rotate(135deg);
-  	left: 335px;
-	top: 167px;
-}
-.T55 {
-	position: absolute;
-	left: 246px;
-	top: 306px;
-	transform: rotate(180deg);
-}
-
-#line_wgsw3_t5_1{
-	position: absolute;
-	height: 2.5px;
-	width: 20px;
-	background-color: #000;
-	left: 213px;
-	top: 287px;
-}
-
-
-/* ------------------------------------ */
-#twta1 {
-        position: absolute;
-        height: 25px;
-        width: 60px;
-		background-color: var(--divcolor);;
-		border: 2px solid #000;
-        left: 20px;
-        top: 100px;
-}
-
-#dl1 {
-        position: absolute;
-        height: 25px;
-        width: 35px;
-		background-color: var(--divcolor);;
-		border: 2px solid #000;
-        left: 80px;
-        top: 160px;
-}
-
-#line_dl1_wgsw1_1 {
-        position: absolute;
-        height: 2.5px;
-        width: 32px;
-        background-color: #000;
-        left: 116px;
-        top: 171px;
-}
-#left_dl1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(135deg);
-	-webkit-transform: rotate(135deg);
-  	left: 117px;
-	top: 168px;
-}
-
-
-#line_twta1_wgsw1_1 {
-        position: absolute;
-        height: 2.5px;
-        width: 102px;
-        background-color: #000;
-        left: 80px;
-        top: 110px;
-}
-
-#line_twta1_wgsw1_2 {
-	position: absolute;
-	height: 25px;
-	width: 2.5px;
-	background-color: #000;
-	left: 179px;
-	top: 112px;
-}
-
-#down_wgsw1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-  	left: 176px;
-	top: 130px;
-}
-
-
-#up_wgsw1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-135deg);
-	-webkit-transform: rotate(-135deg);
-  	left: 176.6px;
-	top: 207px;
+        left: 115px;
+        top: 80px;
 }
 
 #circleimg1{
 	position: absolute;
-	height: 65px;
-	width: 65px;
-	left: 148px;
-	top: 140px;
+	height: 70px;
+	width: 70px;
+	left: 255px;
+	top: 173px;
 	cursor: pointer;
 	transform: scale(1);
 	transition: 0.2s;
 }
 #circleimg1:hover{
-	transform: scale(1.08);
-}
-
-
-
-#line_wgsw2_cplr1_1{
-	position: absolute;
-	height: 58px;
-	width: 2.5px;
-	background-color: #000;
-	left: 301px;
-	top: 82px;
-
-}
-
-#line_wgsw2_cplr1_2{
-	position: absolute;
-	height: 2.5px;
-	width: 206px;
-	background-color: #000;
-	left: 301px;
-	top: 81px;
-}
-
-#right_cplr1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 499px;
-	top: 78px;
-}
-
-
-
-#line_wgsw1_wgsw2_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 54px;
-	background-color: #000;
-	left: 213px;
-	top: 171px;
-}
-#right_wgsw2 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 258px;
-	top: 168.5px;
-}
-
-
-
-#up_wgsw2 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-135deg);
-	-webkit-transform: rotate(-135deg);
-  	left: 298px;
-	top: 207px;
-}
-
-#circleimg3{ 
-	position: absolute;
-	height: 65px;
-	width: 65px;
-	left: 270px;
-	top: 140px;
-	cursor: pointer;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#circleimg3:hover{
-	transform: scale(1.08);
+	transform: scale(1.05);
 }
 
 .T11 {
 	position: absolute;
-	left: 320px;
-	top: 116px;
-	transform: rotate(90deg);
+	left: 227px;
+	top: 190px;
 }
+
 #T1 {
 	position: absolute;
-	height: 25px;
-	width: 25px;
+	height: 30px;
+	width: 30px;
 	background-color: #F8C471;
 	border: 2px solid #000;
-	left: 290px;
-	top: 100px;
+	left: 310px;
+	top: 192px;
 }
-#line_wgsw2_t1_1{
+#dc1{
 	position: absolute;
-	height: 13px;
+	height: 30px;
+	width: 40px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 350px;
+	top: 192px;
+
+}
+
+#line_divi1_cs1_1 {
+        position: absolute;
+        height: 2.5px;
+        width: 95px;
+        background-color: #000;
+        left: 195px;
+        top: 150px;
+}
+
+#line_divi1_cs1_2 {
+	position: absolute;
+	height: 20px;
 	width: 2.5px;
 	background-color: #000;
-	left: 301px;
-	top: 129px;
-}
-.up_t1 {
-	position: absolute;
-	transform: rotate(-135deg);
-	-webkit-transform: rotate(-135deg);
-  	left: 298px;
-	top: 127px;
+	left: 288px;
+	top: 150px;
 }
 
-#DM1 {
-	position: absolute;
-	height: 38px;
-	width: 65px;
-	background-color: var(--divcolor);
-	border: 2px solid #000;
-	left: 355px;
-	top: 152px;
-}
-
-#line_wgsw2_dm1_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 17px;
-	background-color: #000;
-	left: 335px;
-	top: 171px;
-
-}
-#right_dm1 {
+#down_cs1{
 	position: absolute;
 	border: solid black;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
 	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 344px;
-	top: 168px;
-}
-
-
-
-#line_wgsw2_cplr2_1 {
-	position: absolute;
-	height: 60px;
-	width: 2.5px;
-	background-color: #000;
-	left: 302px;
-	top: 205px;
-}
-#line_wgsw2_cplr2_2{
-	position: absolute;
-	height: 2.5px;
-	width: 54px;
-	background-color: #000;
-	left: 302px;
-	top: 263px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  	left: 284.5px;
+	top: 162px;
 
 }
-#line_wgsw2_cplr2_hc3{
-	position: absolute;
-	width: 22px;
-	height: 11px;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-	border: 2.5px solid #000;
-	border-bottom: 0;
-	left: 355px;
-	top: 255px;
-
-}
-#line_wgsw2_cplr2_3{
-	position: absolute;
-	height: 2.5px;
-	width: 132px;
-	background-color: #000;
-	left: 375px;
-	top: 263px;
-
-}
-
-#right_cplr2 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 499px;
-	top: 260px;
-}
-
-
-
-
-/* -------------  img 3  -----------------*/
-#circleimg4{ 
-	position: absolute;
-	height: 65px;
-	width: 65px;
-	left: 520px;
-	top: 140px;
-	cursor: pointer;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#circleimg4:hover{
-	transform: scale(1.08);
-}
-.T22 {
-	position: absolute;
-	left: 492px;
-	top: 154.5px;
-}
-#T2 {
-	position: absolute;
-	height: 25px;
-	width: 25px;
-	background-color: #F8C471;
-	border: 2px solid #000;
-	left: 475px;
-	top: 158px;
-}
-
-#line_cs1_t2_1 {
+#line_cs1_T1{
 	position: absolute;
 	height: 2.5px;
 	width: 15px;
 	background-color: #000;
-	left: 505px;
-	top: 171px;
-}
-.left_t2 {
-	position: absolute;
-	transform: rotate(135deg);
-  	-webkit-transform: rotate(135deg);
-  	left: 502px;
-	top: 166.5px;
-}
+	left:240px;
+	top: 207px;
 
-#cplr1 {
-
-	position: absolute;
-	height: 25px;
-	width: 85px;
-	background-color: var(--divcolor);
-	border: 2px solid #000;
-	left: 510px;
-	top: 70px;
 }
-
-#line_cs1_cplr1_1 {
-	position: absolute;
-	height: 41px;
-	width: 2.5px;
-	background-color: #000;
-	left: 551px;
-	top: 95px;
-}
-#down_cs1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-  	left: 548px;
-	top: 128.5px;
-}
-
-#line_cplr1_antenna_1 {
+#line_cs1_dc1{
 	position: absolute;
 	height: 2.5px;
-	width: 150px;
+	width: 23px;
 	background-color: #000;
-	left: 595px;
-	top: 82px;
-}
-#right_antenna1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 735px;
-	top: 79px;
-}
-
-#cplr2 {
-	position: absolute;
-	height: 25px;
-	width: 85px;
-	background-color: var(--divcolor);
-	border: 2px solid #000;
-	left: 510px;
-	top: 251px;
-}
-
-#line_cs1_cplr2_1 {
-	position: absolute;
-	height: 43px;
-	width: 2.5px;
-	background-color: #000;
-	left: 551.5px;
-	top: 208px;
-}
-#up_cs1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-135deg);
-	-webkit-transform: rotate(-135deg);
-  	left: 548px;
+	left: 325px;
 	top: 207px;
 }
-
-
-#TLT {
-	position: absolute;
-	height: 25px;
-	width: 40px;
-	background-color: var(--divcolor);
-	border: 2px solid #000;
-	left: 683px;
-	top: 158px;
-}
-
-#line_cs1_tlt_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 40px;
-	background-color: #000;
-	left: 585px;
-	top: 171px;
-}
-#line_cs1_tlt_1_hc3{
-	position: absolute;
-	width: 22px;
-	height: 11px;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-	border: 2.5px solid #000;
-	border-bottom: 0;
-	left: 624px;
-	top: 162.5px;
-}
-
-#line_cs1_tlt_2 {
-	position: absolute;
-	height: 2.5px;
-	width: 34px;
-	background-color: #000;
-	left: 645px;
-	top: 171px;
-}
-#right_tlt1 {
+#right_dc1{
 	position: absolute;
 	border: solid black;
 	border-width: 0 3px 3px 0;
@@ -1676,31 +765,60 @@ function postfunction4() {
 	padding: 3px;
 	transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
-	left: 672px;
-	top: 167.5px;
+	left: 339px;
+	top: 203.5px;
 }
 
+#port1_text{
+	color:black;
+	text-align: center;
+	vertical-align: middle;
+	margin: 8px 7px 6px;
+	font-size: 13px;
+}
 
-#line_tlt_cs2_1 {
+#divi1_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 30px;
+}
+
+#T1_text{
+	color:rgb(0, 0, 0);
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#dc1_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+/* ------------------------------------  */
+
+#line_divi1_cs2_1 {
 	position: absolute;
 	height: 2.5px;
-	width: 90px;
+	width: 290px;
 	background-color: #000;
-	left: 723px;
-	top: 170px;
+	left: 195px;
+	top: 132px;
 }
-
-
-#line_tlt_cs2_2 {
+#line_divi1_cs2_2 {
 	position: absolute;
-	height: 26px;
+	height: 38px;
 	width: 2.5px;
 	background-color: #000;
-	left: 813px;
-	top: 170px;
+	left: 484px;
+	top: 132px;
 }
-
-#down_cs2 {
+#down_cs2{
 	position: absolute;
 	border: solid black;
 	border-width: 0 3px 3px 0;
@@ -1708,38 +826,72 @@ function postfunction4() {
 	padding: 3px;
 	transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
-  	left: 810px;
-	top: 189px;
+  	left: 481px;
+	top: 161px;
+
+}
+
+.T22 {
+	position: absolute;
+	left: 420px;
+	top: 190px;
+}
+
+#T2 {
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	background-color: #F8C471;
+	border: 2px solid #000;
+	left: 590px;
+	top: 192px;
+}
+#dc2{
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 545px;
+	top: 192px;
+
 }
 
 
+#T2_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
 
-#line_cplr2_antenna_1 {
+#dc2_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_cs2_T2{
 	position: absolute;
 	height: 2.5px;
-	width: 41px;
+	width: 17px;
 	background-color: #000;
-	left: 595px;
-	top: 263px;
-}
-#line_cplr2_antenna_2 {
-	position: absolute;
-	height: 140px;
-	width: 2.5px;
-	background-color: #000;
-	left: 634px;
-	top: 125px;
-}
+	left: 433px;
+	top: 207px;
 
-#line_cplr2_antenna_3 {
+}
+#line_cs2_dc2{
 	position: absolute;
 	height: 2.5px;
-	width: 109px;
+	width: 23px;
 	background-color: #000;
-	left: 634px;
-	top: 125px;
+	left: 520px;
+	top: 207px;
 }
-#right_antenna2 {
+#right_dc2{
 	position: absolute;
 	border: solid black;
 	border-width: 0 3px 3px 0;
@@ -1747,364 +899,216 @@ function postfunction4() {
 	padding: 3px;
 	transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
-	left: 735px;
-	top: 122px;
+	left: 534px;
+	top: 203.5px;
 }
 
-/* -------------  img 4  -----------------*/
+/* ------------------------------------  */
 
-#circleimg5{ /* done*/
+
+#down_cs3{
 	position: absolute;
-	height: 65px;
-	width: 65px;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+  	left: 676px;
+	top: 161px;
+
+}
+
+#circleimg3{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	left: 645px;
+	top: 173px;
 	cursor: pointer;
 	transform: scale(1);
 	transition: 0.2s;
-	left: 782px;
-	top: 200px;
 }
-#circleimg5:hover{
-	transform: scale(1.08);
+
+#circleimg3:hover{
+	transform: scale(1.05);
 }
+
 .T33 {
 	position: absolute;
-	left: 755px;
-	top: 215px;
+	left: 615px;
+	top: 190px;
 }
 
 #T3 {
 	position: absolute;
-	height: 25px;
-	width: 25px;
+	height: 30px;
+	width: 30px;
 	background-color: #F8C471;
 	border: 2px solid #000;
-	left: 738px;
-	top: 220px;
+	left: 870px;
+	top: 192px;
+}
+#acu{
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 740px;
+	top: 192px;
+
 }
 
+#T3_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
 
-#line_cs2_t3_1 {
+#acu_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_cs3_T3{
 	position: absolute;
 	height: 2.5px;
-	width: 14px;
+	width: 17px;
 	background-color: #000;
-	left: 768px;
-	top: 231px;
+	left: 628px;
+	top: 207px;
+
 }
-.left_t3 {
-	position: absolute;
-	transform: rotate(135deg);
-  	-webkit-transform: rotate(135deg);
-  	left: 764px;
-	top: 228px;
-}
-
-
-
-#line_cs2_cs3_1 {
+#line_cs3_acu{
 	position: absolute;
 	height: 2.5px;
-	width: 28px;
+	width: 23px;
 	background-color: #000;
-	left: 847px;
-	top: 231px;
+	left: 715px;
+	top: 207px;
 }
-#right_cs3 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 866px;
-	top: 228px;
-}
-/* -------------  img 5  -----------------*/
-
-#circleimg6{
-	position: absolute;
-	height: 65px;
-	width: 65px;
-	cursor: pointer;
-	transform: scale(1);
-	transition: 0.2s;
-	left: 877px;
-	top: 200px;
-}
-#circleimg6:hover{
-	transform: scale(1.08);
-}
+/* ------------------------------------  */
 
 .T44 {
 	position: absolute;
-	left: 970px;
-	top: 250px;
-	transform: rotate(180deg);
+	left: 795px;
+	top: 190px;
 }
 
-#T4 {
+#circleimg4{
 	position: absolute;
-	height: 25px;
-	width: 25px;
-	background-color: #F8C471;
+	height: 70px;
+	width: 70px;
+	left: 825px;
+	top: 173px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+
+#circleimg4:hover{
+	transform: scale(1.05);
+}
+
+#line_cs4_T4{
+	position: absolute;
+	height: 2.5px;
+	width: 17px;
+	background-color: #000;
+	left: 808px;
+	top: 207px;
+
+}
+#line_cs4_amp{
+	position: absolute;
+	height: 2.5px;
+	width: 15px;
+	background-color: #000;
+	left: 895px;
+	top: 207px;
+}
+#right_amp{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	left: 902px;
+	top: 203.5px;
+}
+
+#amp{
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	background-color: #F5B7B1;
 	border: 2px solid #000;
-	left: 982px;
-	top: 220px;
-}
-
-#line_cs3_t4_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 16px;
-	background-color: #000;
-	left: 942px;
-	top: 231px;
-
-}
-.right_t4 {
-	position: absolute;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 971px;
-	top: 228px;
-}
-
-#line_cs3_rxcplr1_1 {
-	position: absolute;
-	height: 30px;
-	width: 2.5px;
-	background-color: #000;
-	left: 928px;
-	top: 170px;
-}
-
-#line_cs3_rxcplr1_2 {
-	position: absolute;
-	height: 2.5px;
-	width: 116px;
-	background-color: #000;
-	left: 928px;
-	top: 170px;
-}
-#right_rxcplr1 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 1037px;
-	top: 166.5px;
-}
-
-#line_cs3_rxcplr2_1 {
-	position: absolute;
-	height: 30px;
-	width: 2.5px;
-	background-color: #000;
-	left: 928px;
-	top: 265px;
-}
-
-#line_cs3_rxcplr2_2 {
-	position: absolute;
-	height: 2.5px;
-	width: 116px;
-	background-color: #000;
-	left: 928px;
-	top: 295px;
-}
-
-#inject {
-	position: absolute;
-	height: 25px;
-	width: 85px;
-	background-color:var(--divcolor);
-	border: 2px solid #000;
-	left: 678px;
-	top: 283px;
-}
-
-#line_inject_cs2_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 50px;
-	background-color: #000;
-	left: 763px;
-	top: 294px;
-}
-
-#line_inject_cs2_2 {
-	position: absolute;
-	height: 27px;
-	width: 2.5px;
-	background-color: #000;
-	left: 813px;
-	top: 269px;
-}
-
-#up_cs2 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-135deg);
-	-webkit-transform: rotate(-135deg);
-  	left: 810px;
-	top: 267px;
-}
-
-#antenna {
-	position: absolute;
-	height: 80px;
-	width: 50px;
-	border: 0 solid #000;
-	left: 760px;
-	top: 60px;
-}
-
-#cplr3 {
-position: absolute;
-height: 25px;
-width: 85px;
-background-color: var(--divcolor);
-border: 2px solid #000;
-left: 870px;
-top: 70px;
-}
-
-#cplr4 {
-position: absolute;
-height: 25px;
-width: 85px;
-background-color: var(--divcolor);
-border: 2px solid #000;
-left: 955px;
-top: 115px;
-}
-
-#compx {
-position: absolute;
-height: 88px;
-width: 70px;
-background-color: var(--divcolor);
-border: 2px solid #000;
-left: 1070px;
-top: 70px;
-}
-
-#line_antenna_cplr3_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 48px;
-	background-color: #000;
-	left: 820px;
-	top: 82px;
-}
-
-#line_antenna_cplr4_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 80px;
-	background-color: #000;
-	left: 820px;
-	top: 125px;
-}
-
-#line_antenna_cplr4_hc{
-	position: absolute;
-	width: 22px;
-	height: 11px;
-	border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-	border: 2.5px solid #000;
-	border-bottom: 0;
-	left: 898px;
-	top: 116px;
-}
-
-#line_antenna_cplr4_2 {
-	position: absolute;
-	height: 2.5px;
-	width: 35px;
-	background-color: #000;
-	left: 920px;
-	top: 125px;
-}
-
-#right_cplr4 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 945px;
-	top: 122px;
-}
-
-#right_cplr3 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 859px;
-	top: 79px;
-}
-
-#line_cplr3_cs3_1 {
-	position: absolute;
-	height: 102px;
-	width: 2.5px;
-	background-color: #000;
-	left: 908px;
-	top: 95px;
-}
-#down_cs3 {
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	left: 905px;
+	left: 913px;
 	top: 188px;
 }
 
 
-#line_cs3_cplr4_1 {
-	position: absolute;
-	height: 29px;
-	width: 2.5px;
-	background-color: #000;
-	left: 909px;
-	top: 268px;
-}
-#line_cs3_cplr4_2 {
-	position: absolute;
-	height: 2.5px;
-	width: 90px;
-	background-color: #000;
-	left: 910px;
-	top: 295px;
-}
-#line_cs3_cplr4_3 {
-	position: absolute;
-	height: 158px;
-	width: 2.5px;
-	background-color: #000;
-	left: 998px;
-	top: 140px;
+#T4_text{
+	color:black;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
 }
 
-#up_cplr4 {
+#amp_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+#line_divi1_cs4_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 666px;
+	background-color: #000;
+	left: 195px;
+	top: 104px;
+}
+
+#line_divi1_cs4_2 {
+	position: absolute;
+	height: 64px;
+	width: 2.5px;
+	background-color: #000;
+	left: 859px;
+	top: 106px;
+}
+
+#line_divi2_cs4_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 666px;
+	background-color: #000;
+	left: 195px;
+	top: 316px;
+}
+
+
+#line_divi2_cs4_2 {
+	position: absolute;
+	height: 72px;
+	width: 2.5px;
+	background-color: #000;
+	left: 859px;
+	top: 244px;
+}
+#up_cs4{
 	position: absolute;
 	border: solid black;
 	border-width: 0 3px 3px 0;
@@ -2112,310 +1116,291 @@ top: 70px;
 	padding: 3px;
 	transform: rotate(-135deg);
 	-webkit-transform: rotate(-135deg);
-	left: 906px;
-	top: 267px;
+  	left: 856px;
+	top: 244px;
+}
+/* ------------------------------------  */
+
+.T55 {
+	position: absolute;
+	left: 975px;
+	top: 190px;
 }
 
-#line_cplr3_compx_1 {
+#circleimg5{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	left: 1005px;
+	top: 173px;
+	cursor: pointer;
+	transform: scale(1);
+	transition: 0.2s;
+}
+
+#circleimg5:hover{
+	transform: scale(1.05);
+}
+
+#line_cs5_T5{
 	position: absolute;
 	height: 2.5px;
-	width: 112px;
+	width: 17px;
 	background-color: #000;
-	left: 955px;
-	top: 85px;
-}
+	left: 988px;
+	top: 207px;
 
-#line_cplr4_compx_1 {
+}
+#line_cs5_aupc{
 	position: absolute;
 	height: 2.5px;
-	width: 28px;
+	width: 15px;
+	background-color: #000;
+	left: 1075px;
+	top: 207px;
+}
+#right_aupc{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	left: 1083px;
+	top: 203.5px;
+}
+
+#aupc{
+	position: absolute;
+	height: 30px;
+	width: 45px;
+	background-color: #F5B7B1;
+	border: 2px solid #000;
+	left: 1094px;
+	top: 192px;
+}
+
+#aupc_text{
+	color:black;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 5px;	
+}
+
+
+#line_divi1_cs5_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 845px;
+	background-color: #000;
+	left: 195px;
+	top: 90px;
+}
+
+#line_divi1_cs5_2 {
+	position: absolute;
+	height: 80px;
+	width: 2.5px;
 	background-color: #000;
 	left: 1040px;
-	top: 125px;
+	top: 90px;
 }
 
-#right_compx_1 {
+
+
+#line_divi2_cs5_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 845px;
+	background-color: #000;
+	left: 195px;
+	top: 330px;
+}
+
+
+#line_divi2_cs5_2 {
+	position: absolute;
+	height: 88px;
+	width: 2.5px;
+	background-color: #000;
+	left: 1040px;
+	top: 244px;
+}
+#up_cs5{
 	position: absolute;
 	border: solid black;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
 	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 1060px;
-	top: 82px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 1036.5px;
+	top: 244px;
 }
-#right_compx_2{
+
+/* ------------------------------------  */
+
+#port2 {
+        position: absolute;
+        height: 36px;
+        width: 76px;
+        background-color: #F5B7B1;
+		border: 2px solid #000;
+        left: 15px;
+        top: 280px;
+}    
+    
+#line_port2_divi2 {
+	position: absolute;
+	height: 2.5px;
+	width: 24px;
+	background-color: #000;
+	left: 90px;
+	top: 300px;
+}
+#right_divi2{
+		position: absolute;
+		border: solid black;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		left: 104px;
+		top: 297px;
+}		
+
+#divi2 {
+        position: absolute;
+        height: 80px;
+        width: 80px;
+        background-color: #F2F3F4;
+		border: 2px solid #000;
+        left: 115px;
+        top: 260px;
+}
+
+#line_divi2_cs1_1 {
+	position: absolute;
+	height: 2.5px;
+	width: 95px;
+	background-color: #000;
+	left: 195px;
+	top: 270px;
+}
+#line_divi2_cs1_2 {
+	position: absolute;
+	height: 25px;
+	width: 2.5px;
+	background-color: #000;
+	left: 288px;
+	top: 245px;
+}
+
+#up_cs1{
 	position: absolute;
 	border: solid black;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
 	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 1060px;
-	top: 122px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 284.5px;
+	top: 245px;
 }
 
-/* -------------------  Text css  ---------------------*/
-
-#ant_text_1{
+#line_divi2_cs2_1 {
 	position: absolute;
-	left: 710px;
-	top: 65px;
-	color:rgb(43, 43, 43);
-	font-size: 13px;	
-	font-weight: bold;
+	height: 2.5px;
+	width: 290px;
+	background-color: #000;
+	left: 195px;
+	top: 286px;
+}
+#line_divi2_cs2_2 {
+	position: absolute;
+	height: 42px;
+	width: 2.5px;
+	background-color: #000;
+	left: 485px;
+	top: 246px;
+}
+#up_cs2{
+	position: absolute;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 482px;
+	top: 245px;
 }
 
-#ant_text_2{
+#line_divi2_cs3_1 {
 	position: absolute;
-	left: 710px;
-	top: 108px;
-	color:rgb(43, 43, 43);
-	font-size: 13px;	
-	font-weight: bold;
-}
-#ant_text_3{
-	position: absolute;
-	left: 830px;
-	top: 65px;
-	color:rgb(43, 43, 43);
-	font-size: 13px;	
-	font-weight: bold;
-}
-#ant_text_4{
-	position: absolute;
-	left: 830px;
-	top: 108px;
-	color:rgb(43, 43, 43);
-	font-size: 13px;	
-	font-weight: bold;
+	height: 2.5px;
+	width: 486px;
+	background-color: #000;
+	left: 195px;
+	top: 302px;
 }
 
-#tlt_text_1{
+
+#line_divi2_cs3_2 {
 	position: absolute;
-	left: 655px;
-	top: 154px;
-	color:rgb(43, 43, 43);
-	font-size: 13px;	
-	font-weight: bold;
+	height: 60px;
+	width: 2.5px;
+	background-color: #000;
+	left: 679px;
+	top: 244px;
 }
-#tlt_text_2{
+#up_cs3{
 	position: absolute;
-	left: 732px;
-	top: 154px;
-	color:rgb(43, 43, 43);
-	font-size: 13px;	
-	font-weight: bold;
+	border: solid black;
+	border-width: 0 3px 3px 0;
+	display: inline-block;
+	padding: 3px;
+	transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+  	left: 676px;
+	top: 244px;
 }
 
-#wgsw1_text{
-	position: absolute;
-	left: 202spx;
-	top: 205px;
-	color:rgb(43, 43, 43);
-	font-size: 13px;	
-	font-weight: bold;
-}
 
-#wgsw2_text{
-	position: absolute;
-	left: 320spx;
-	top: 205px;
-	color:rgb(44, 44, 44);
-	font-size: 13px;	
-	font-weight: bold;
-}
-
-#wgsw3_text{
-	position: absolute;
-	left: 197px;
-	top: 320px;
-	color:rgb(44, 44, 44);
-	font-size: 13px;	
-	font-weight: bold;
-}
-
-#cs1_text{
-	position: absolute;
-	color:rgb(44, 44, 44);
-	font-size: 13px;	
-	font-weight: bold;
-	left: 565px;
-	top: 202px;
-}
+/* ------------------------------------  */
 
 #cs2_text{
 	position: absolute;
 	color:rgb(44, 44, 44);
 	font-size: 13px;	
 	font-weight: bold;
-	left: 830px;
-	top: 264px;
+	left: 508px;
+	top: 242px;
 }
-
 #cs3_text{
 	position: absolute;
 	color:rgb(44, 44, 44);
 	font-size: 13px;	
 	font-weight: bold;
-	left: 930px;
-	top: 264px;
+	left: 698px;
+	top: 242px;
 }
-
-
-#twta1_text{
-	color:black;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-	font-size: 13px;
-}
-
-#dl1_text{
-	color:black;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-	font-size: 13px;
-}
-
-#twta2_text{
-	color:black;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-	font-size: 13px;
-}
-
-#T1_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;	
-}
-
-
-#DM1_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	
-}
-#T2_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;	
-}
-#cplr1_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-}
-#cplr2_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-}
-#cplr3_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-}
-#cplr4_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-}
-
-#compx_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 25px 2px;
-}
-#TLT_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-}
-
-#T3_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;	
-}
-
-#T4_text{
-	color:rgb(0, 0, 0);
-	font-size: 13px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;	
-}
-
-#rxcplr1_text{
-	color:black;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-	font-size: 13px;
-}
-
-#rxcplr2_text{
-	color:black;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-	font-size: 13px;
-}
-
-#inject_text{
-	color:black;
-	text-align: center;
-	vertical-align: middle;
-	padding: 3px 2px;
-	font-size: 13px;
-}
-
-
-/* ----------------------------------------------------------------*/
-#d1 {
-	display: block;
-	color: black;
-}
-
-#circleimg10{
+#cs4_text{
 	position: absolute;
-	height: 80px;
-	width: 80px;
-	left: 925px;
-	top: 168px;
-	cursor: pointer;
-	transform: scale(1);
-	transition: 0.2s;
+	color:rgb(44, 44, 44);
+	font-size: 13px;	
+	font-weight: bold;
+	left: 878px;
+	top: 242px;
 }
-/* ----------------------------------------------------------------*/
 
-/* --------------------  Network Popup  ---------------------*/
+
+/* ------------------------------------  */
+
+/* Setting popup*/
 
 /* The Close Button */
   .close1 {
@@ -2454,7 +1439,7 @@ top: 70px;
 	transform: scale(1.2);
   }
 
-/* ---------------------  About Popup  --------------------- */
+/* About popup*/
 
 /* The Modal (background) */
 .modal {
@@ -2517,8 +1502,6 @@ top: 70px;
 	  padding: 3px 3px 3px 6px;
 	  margin: 0;
   }
-
-/* ---------------------------------------------------*/
 
 </style>
 </html>
