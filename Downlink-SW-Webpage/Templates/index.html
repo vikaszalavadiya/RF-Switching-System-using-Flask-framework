@@ -63,20 +63,7 @@
 								<div class="menu">
 									<nav class="navbar navbar-default">
 										<div class="container-fluid">
-											<ul class="nav navbar-nav">
-												<li>
-													<a id="myBtn1" href="javascript:networkfunc()" >Network</a>
-												</li>
-												<li>
-													<a id="myBtn2">About</a>
-												</li>
-												
-												
-												<!--<li style="color: white;">
-													<a href="pdf/manual.pdf" target="_blank" id="myBtn3">User Manual</a>
-												</li>-->
-												
-											</ul>
+										
 										</div>
 										<!-- Setting Window -->
 										<div id="myModal1" class="modal">
@@ -84,43 +71,14 @@
 											<!-- Modal content -->
 											<div class="modal-content">
 												<div class="modeldiv1">
-													<table id="iptable1">
-														<tr>
-															<td><h3 style="color: white; float: right;">Network</h3></td>
-															<td><span class="close1">&times;</span></td>
-														</tr>
-													</table>
+											
 											
 												</div>
 												<div class="modeldiv2">
 													<h4><b>IP Configuration</b></h4>
 													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
 													<form name="myipconfig" action="" method="post" onsubmit = "return validateipaddress()">
-													<table class="modeltext">
-														<tr>
-															<td><b>IP Address</b></td>
-															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="ipadd" autocomplete="off" maxlength="15" size="12" name="ipaddress" required value="{{webipaddress}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))"/></td>
-															<td style="padding-left: 120px;"><button type="button" id="editbtn" onclick="valueenable()">Edit</button></td>
-														</tr>
-														<tr>
-															<td><b>Gateway Address</b></td>
-															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="gateway" autocomplete="off" maxlength="15" size="12" name="gatewayadd" required value="{{webgatewayadd}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))" /></td>
-															
-														</tr>
-														<tr>
-															<td><b>Subnet mask</b></td>
-															<td><b>:</b>&nbsp;&nbsp;<input type="text" class="ipinputtag" id="subnet" autocomplete="off" maxlength="15" size="12" name="subnetmask" required value="{{websubnetmask}}" onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode ==46 || (event.charCode >=48 && event.charCode <=57)))" /></td>
-														</tr>
-													</table>
-													<br>									
-													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
-													<table style=" margin-left: auto; margin-right: auto;">
-														<tr>
-															<td style="padding: 0 20px 0 20px;"><button type="button" id="exitbtn" onclick="exitmodelfunction()">Exit</button></td>
-															<td style="padding: 0 20px 0 20px; "><input name="btnval" id="setipbtn" type="submit" value="Apply" onclick="postfunction4()"></td>
-															
-														</tr>
-													</table>
+													
 													</form>													
 												</div>
 											</div>
@@ -142,24 +100,7 @@
 												<div class="modeldiv2">
 													<h4>Product</h4>
 													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
-													<table class="modeltext">
-														<tr>
-															<td><b>Product Name</b></td>
-															<td><b>:</b> Ku-Band RF Downlink Switching Unit</td>
-														</tr>
-														<tr>
-															<td><b>Model Number</b></td>
-															<td><b>:</b> CSW25Ku</td>
-														</tr>
-														<tr>
-															<td><b>Serial Number</b></td>
-															<td><b>:</b>  </td>
-														</tr>
-														<tr>
-															<td><b>Firmware Version</b></td>
-															<td><b>:</b> 2.1.0</td>
-														</tr>
-													</table>
+
 													<br>
 													<h4>Manufacturer</h4>
 													<hr style="width: 100%; height: 1px; background-color: #d2300e; margin: 0 0 10px 0;">
@@ -209,36 +150,7 @@
 									<h3 id="h3css">Current Status</h3>
 									<div class="col-md-6">
 										<font size="3" color="#5A5A5A">
-										   <table id="iptable">
-										  	<form action ="" method ="post">
-											
-										   	<tr>
-											 	<td><p>Down Converter 1</p></td>
-												<td><p>:</p></td>
-											 	<td><b><p id="converter1">{{converter1}}</p></b></td>
-										  	</tr>
-										  	<tr>
-											 	<td><p>Down Converter 2</p></td>
-												<td><p>:</p></td>
-											 	<td><b><p id="converter2">{{converter2}}</p></b></td>
-										  	</tr>
-										 	<tr>
-											 	<td><p>Servo & Tracking</p></td>
-												<td><p>:</p></td>
-											 	<td><b><p id="tracking">{{tracking}}</p></b></td>
-										  	</tr>
-											<tr>
-												<td><p>Line Amplifier</p></td>
-											    <td><p>:</p></td>
-												<td><b><p id="lineamp">{{lineamp}}</p></b></td>
-											 </tr>
-											 <tr>
-												<td><p>AUPC</p></td>
-											   	<td><p>:</p></td>
-												<td><b><p id="AUPC">{{AUPC}}</p></b></td>
-											 </tr>
-										  	</form>
-										   </table>
+										   
 										</font>
 									</div>
 									<div class="col-md-6">
@@ -285,30 +197,6 @@
 											<div id="line_divi1_cs2_2"></div>
 											<div id="down_cs2"></div>
 											<p id="cs2_text">D/C-2</p>
-											
-
-											<!-- ------- Circle 2 img --------- -->
-
-											<div id="line_cs2_T2"></div>
-											<div id="line_cs2_dc2"></div>
-											<div id="right_dc2"></div>
-											<div class="T22">
-												<div class="arrow1 t91"></div>
-												<div class="arrow1 t92"></div>
-												<div class="arrow1 t93"></div>
-											</div>
-											
-											<!-- <div id="T2"> <h3 id="T2_text">T</h3> </div> -->
-											<div id="dc2"> <h3 id="dc2_text">D/C 2</h3> </div>
-
-											<!-- ------------------------------------------------------------------------------------------- -->
-											<div id="line_divi1_cs3_1"></div>
-											<div id="line_divi1_cs3_2"></div>
-											<div id="down_cs3"></div>
-											<p id="cs3_text">Servo & Track.</p>
-
-											<!-- ------- Circle 3 img --------- -->
-
 
 											<div id="line_cs3_T3"></div>
 											<div id="line_cs3_acu"></div>
@@ -328,44 +216,15 @@
 											<div id="down_cs4"></div>
 											<p id="cs4_text">Line Amp.</p>
 
-											<!-- ------- Circle 4 img --------- -->
 
 
-											<div id="line_cs4_T4"></div>
-											<div id="line_cs4_amp"></div>
-											<div id="right_amp"></div>
-											<div class="T44">
-												<div class="arrow1 t91"></div>
-												<div class="arrow1 t92"></div>
-												<div class="arrow1 t93"></div>
-											</div>
-											
-											<!-- <div id="T3"> <h3 id="T3_text">T</h3> </div>-->
-											<div id="amp"> <h3 id="amp_text">Line Amp</h3> </div>
 
 											<!-- ------------------------------------------------------------------------------------------- -->
 
 											<div id="line_divi1_cs5_1"></div>
 											<div id="line_divi1_cs5_2"></div>
 											<div id="down_cs5"></div>
-											<p id="cs5_text">AUPC</p>
-
-											<!-- ------- Circle 5 img --------- -->
-
-
-											<div id="line_cs5_T5"></div>
-											<div id="line_cs5_aupc"></div>
-											<div id="right_aupc"></div>
-											<div class="T55">
-												<div class="arrow1 t91"></div>
-												<div class="arrow1 t92"></div>
-												<div class="arrow1 t93"></div>
-											</div>
-											
-											<!-- <div id="T3"> <h3 id="T3_text">T</h3> </div>-->
-											<div id="aupc"> <h3 id="aupc_text">AUPC</h3> </div>
-
-											<!-- ------------------------------------------------------------------------------------------- -->
+											<p id="cs5_text">AUPC</p><!-- ------------------------------------------------------------------------------------------- -->
 
 											<div id="port2"><h3 id="port1_text">RX Port 2</h3></div>
 											<div id="line_port2_divi2"></div>
@@ -392,36 +251,6 @@
 											<div id="line_divi2_cs5_1"></div>
 											<div id="line_divi2_cs5_2"></div>
 											<div id="up_cs5"></div>
-
-
-											<!-- ------------ Upper imgs ------------------------------------------------------------- -->
-
-											
-											
-											<form action ="" method ="post" onsubmit="return validate1(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="Converter1" > <img id ="circleimg1" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>
-												<!--<button id="mybtn" name="btnval" type="Submit" value="Converter1" > <img id ="circleimg1" src="static/img/varc.png" alt="circle"></button>-->
-																  <!--onclick="postfunction1()"
-																  <input name="btnval" type="Submit" value="Channel" id ="circleimg" src="{{ url_for('static', filename='img/varc3.png') }}" alt="circle">-->
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate2(this);">
-												<button id="mybtn" name="btnval" type="Submit" value="Converter2" > <img id ="circleimg2" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate3(this);" >
-												<button id="mybtn" name="btnval" type="Submit" value="Tracking" > <img id ="circleimg3" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>		
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate5(this);" >
-												<button id="mybtn" name="btnval" type="Submit" value="lineamp" > <img id ="circleimg4" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>		 
-											</form>
-
-											<form action ="" method ="post" onsubmit="return validate6(this);" >
-												<button id="mybtn" name="btnval" type="Submit" value="aupc" > <img id ="circleimg5" src="{{ url_for('static', filename='img/varc.gif') }}" alt="circle"></button>		
-											</form>
-
-											<!-- ------------------------------------------------------------------------ -->
 
 										</div>
 										
@@ -562,18 +391,6 @@
 	}
 </script>
 
-<script>
-	
-function networkfunc () {
-	var getipadd = '{{webipaddress}}';
-	var getgateway = '{{webgatewayadd}}';
-	var getsubnet = '{{websubnetmask}}';
-	document.getElementById("ipadd").value = getipadd;
-	document.getElementById("gateway").value = getgateway;
-	document.getElementById("subnet").value = getsubnet;
-}
-	
-</script>
 
 
 
@@ -583,19 +400,6 @@ var green = '#0BDA51';
 var red = '#e74c3c';
 var yellow = '#FFEA00';
 
-var intervalID = setInterval(confunc,500);
-
-function confunc () {
-	$.getJSON($SCRIPT_ROOT + '/_load1',
-     	function(data) {
-		$('#lclrem_web').text(data.lclrem_web);
-		$('#converter1').text(data.converter1);
-		$('#converter2').text(data.converter2);
-		$('#tracking').text(data.tracking);
-		$('#lineamp').text(data.lineamp);
-		$('#AUPC').text(data.AUPC);
-        
-	});
 	
 	document.getElementById("converter1").style.color = '#5A5A5A';
 	document.getElementById("converter2").style.color = '#5A5A5A';
@@ -610,13 +414,7 @@ function confunc () {
 	
 	//document.getElementById("line_cs1_dc1").style.backgroundColor = green;
 	//document.getElementById("right_dc1").style.borderColor = green;
-	//document.getElementById("line_cs1_T1").style.backgroundColor = yellow;
-	//document.getElementById("line_cs2_dc2").style.backgroundColor = green;
-	//document.getElementById("right_dc2").style.borderColor = green;
-	//document.getElementById("line_cs2_T2").style.backgroundColor = yellow;
-	//document.getElementById("line_cs3_T3").style.backgroundColor = yellow;
-	//document.getElementById("line_cs3_acu").style.backgroundColor = green;
-	//document.getElementById("right_acu").style.borderColor = green;
+
 	
 	if (document.getElementById("lclrem_web").innerHTML == "Remote mode"){
 		document.getElementById("remote_table").style.color = green1;
@@ -635,10 +433,7 @@ function confunc () {
 		//document.getElementById("line_divi1_cs1_1").style.backgroundColor = green;
 		//document.getElementById("line_divi1_cs1_2").style.backgroundColor = green;
 		//document.getElementById("down_cs1").style.borderColor = green;
-		//document.getElementById("line_divi2_cs1_1").style.backgroundColor = yellow;
-		//document.getElementById("line_divi2_cs1_2").style.backgroundColor = yellow;
-		//document.getElementById("up_cs1").style.borderColor = yellow;
-		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/static/img/varc1.png";	
+	
 	}
 	else{
 		document.getElementById('circleimg1').src="{{ url_for('static', filename='img/varc2.png') }}";
@@ -655,21 +450,13 @@ function confunc () {
 		document.getElementById('circleimg2').src="{{ url_for('static', filename='img/varc1.png') }}";
 		//document.getElementById("line_divi1_cs2_1").style.backgroundColor = green;
 		//document.getElementById("line_divi1_cs2_2").style.backgroundColor = green;
-		//document.getElementById("down_cs2").style.borderColor = green;
-		//document.getElementById("line_divi2_cs2_1").style.backgroundColor = yellow;
-		//document.getElementById("line_divi2_cs2_2").style.backgroundColor = yellow;
-		//document.getElementById("up_cs2").style.borderColor = yellow;
-		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/static/img/varc1.png";	
+
 	}
 	else{
 		document.getElementById('circleimg2').src="{{ url_for('static', filename='img/varc2.png') }}";
 		//document.getElementById("line_divi1_cs2_1").style.backgroundColor = yellow;
 		//document.getElementById("line_divi1_cs2_2").style.backgroundColor = yellow;
-		//document.getElementById("down_cs2").style.borderColor = yellow;
-		//document.getElementById("line_divi2_cs2_1").style.backgroundColor = green;
-		//document.getElementById("line_divi2_cs2_2").style.backgroundColor = green;
-		//document.getElementById("up_cs2").style.borderColor = green;
-		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/staticimg/varc2.png";	
+	
 	}
 
 	if(document.getElementById("tracking").innerHTML == "Position 1"){
@@ -686,11 +473,7 @@ function confunc () {
 		document.getElementById('circleimg3').src="{{ url_for('static', filename='img/varc2.png') }}";
 		//document.getElementById("line_divi1_cs3_1").style.backgroundColor = yellow;
 		//document.getElementById("line_divi1_cs3_2").style.backgroundColor = yellow;
-		//document.getElementById("down_cs3").style.borderColor = yellow;
-		//document.getElementById("line_divi2_cs3_1").style.backgroundColor = green;
-		//document.getElementById("line_divi2_cs3_2").style.backgroundColor = green;
-		//document.getElementById("up_cs3").style.borderColor = green;
-		//document.getElementById('circleimg').src="C:/Users/cziot/Desktop/SW21_V5_(15-09-2020)/pi/staticimg/varc2.png";	
+	
 	}
 
 	if(document.getElementById("lineamp").innerHTML == "Position 1"){
@@ -722,35 +505,6 @@ document.getElementById("subnet").style.borderColor = "#ffff";
 document.getElementById("setipbtn").disabled = true;
 document.getElementById("editbtn").innerHTML = "Edit";
 
-function valueenable () {
-
-	if (document.getElementById("editbtn").innerHTML=="Edit"){
-
-		document.getElementById("ipadd").disabled = false;
-		document.getElementById("gateway").disabled = false;
-		document.getElementById("subnet").disabled = false;
-		document.getElementById("ipadd").style.borderColor = "#8B8B8B";
-		document.getElementById("gateway").style.borderColor = "#8B8B8B";
-		document.getElementById("subnet").style.borderColor = "#8B8B8B";
-
-		document.getElementById("setipbtn").disabled = false;
-		document.getElementById("editbtn").innerHTML = "Close";
-	}
-	else {
-		document.getElementById("ipadd").disabled = true;
-		document.getElementById("gateway").disabled = true;
-		document.getElementById("subnet").disabled = true;
-		document.getElementById("ipadd").style.borderColor = "#ffff";
-		document.getElementById("gateway").style.borderColor = "#ffff";
-		document.getElementById("subnet").style.borderColor = "#ffff";
-
-		document.getElementById("setipbtn").disabled = true;
-		document.getElementById("editbtn").innerHTML = "Edit"
-
-	}
-	
-}
-</script>
 <script>
 
 function validateipaddress()
@@ -843,41 +597,6 @@ function validate6(form) {
 
 </script>
 <style>
-/* ---------------  Arrows ----------------------- */  
-.arrow {
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-}
-
-
-/* ---------------  Terminator ----------------------- */  
-.t91 {
-	position: absolute;
-	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);	
-}
-.t92 {
-	position: absolute;
-	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);
-    margin-top:12px;
-}
-.t93 {
-	position: absolute;
-	transform: rotate(-45deg);
-  	-webkit-transform: rotate(-45deg);
-    margin-top:24px;
-}
-
-.arrow1 {
-	border: solid #000000;
-	border-width: 0 3.5px 3.5px 0;
-	display: inline-block;
-	padding: 4px;
-}
-/* ----------------------------------- */ 
 
 
 /*  All Titels CSS Codes*/
@@ -947,98 +666,6 @@ function validate6(form) {
 }
 
 /* ************************************** */
-#editbtn{
-	display: inline-block;
-	border: none;
-	color: black;
-	width: 55px;
-	padding: 5px 10px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #ccd1d1;
-	border-radius: 4px;
-	float:right;
-	/*margin-right:362px;*/
-}
-#exitbtn{
-	display:block;
-	border: none;
-	color: black;
-	width: 60px;
-	padding: 5px 12px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background-color: #ccd1d1;
-	border-radius: 5px;
-	
-	
-}
-#setipbtn{
-	display:block;
-	border: none;
-	color: #fff;
-	padding: 5px 12px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background: linear-gradient(to bottom, #028fcf 0%,#283b93 100%);
-	border-radius: 5px;
-	transform: scale(1);
-	transition: 0.1s;
-	
-}
-#setipbtn:hover{
-        transform: scale(1.01);
-}
-
-/*  Control Redundancy Mode circle CSS Codes*/
-
-#auto{
-	display: inline-block;
-	border: none;
-	color: #fff;
-	padding: 6px 10px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background-color: #028fcf;
-	border-radius: 200px;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#auto:hover{
-        transform: scale(1.1);
-}
-
-#manual{
-	display: inline-block;
-	border: none;
-	color: #fff;
-	padding: 6px 10px;
-	text-align: center;
-	vertical-align: middle;
-	text-decoration: none;
-	font-size: 16px;
-	cursor: pointer;
-	background-color: #028fcf;
-	border-radius: 200px;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#manual:hover{
-        transform: scale(1.1);
-}
-
 
 #automan {
 	height: 90px;
@@ -1059,23 +686,6 @@ function validate6(form) {
 	border: 0;
 }
 
-#port1 {
-        position: absolute;
-        height: 35px;
-        width: 76px;
-        background-color: #F5B7B1;
-		border: 2px solid #000;
-        left: 15px;
-        top: 100px;
-}
-#line_port1_divi1 {
-        position: absolute;
-        height: 2.5px;
-        width: 24px;
-        background-color: #000;
-        left: 90px;
-        top: 118px;
-}
 
 #right_divi1{
 		position: absolute;
@@ -1259,20 +869,6 @@ function validate6(form) {
 
 }
 
-#circleimg2{
-	position: absolute;
-	height: 70px;
-	width: 70px;
-	left: 450px;
-	top: 173px;
-	cursor: pointer;
-	transform: scale(1);
-	transition: 0.2s;
-}
-#circleimg2:hover{
-	transform: scale(1.05);
-}
-
 .T22 {
 	position: absolute;
 	left: 420px;
@@ -1347,23 +943,6 @@ function validate6(form) {
 
 /* ------------------------------------  */
 
-#line_divi1_cs3_1 {
-	position: absolute;
-	height: 2.5px;
-	width: 486px;
-	background-color: #000;
-	left: 195px;
-	top: 117px;
-}
-
-#line_divi1_cs3_2 {
-	position: absolute;
-	height: 52px;
-	width: 2.5px;
-	background-color: #000;
-	left: 679px;
-	top: 118px;
-}
 
 #down_cs3{
 	position: absolute;
@@ -1452,18 +1031,6 @@ function validate6(form) {
 	left: 715px;
 	top: 207px;
 }
-#right_acu{
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
-	left: 730px;
-	top: 203.5px;
-}
-
 /* ------------------------------------  */
 
 .T44 {
@@ -1560,19 +1127,6 @@ function validate6(form) {
 	left: 859px;
 	top: 106px;
 }
-#down_cs4{
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-  	left: 856px;
-	top: 161px;
-
-}
-
 
 #line_divi2_cs4_1 {
 	position: absolute;
@@ -1665,15 +1219,6 @@ function validate6(form) {
 	top: 192px;
 }
 
-
-#T5_text{
-	color:black;
-	font-size: 16px;
-	text-align: center;
-	vertical-align: middle;
-	margin-top: 5px;	
-}
-
 #aupc_text{
 	color:black;
 	font-size: 13px;
@@ -1700,18 +1245,7 @@ function validate6(form) {
 	left: 1040px;
 	top: 90px;
 }
-#down_cs5{
-	position: absolute;
-	border: solid black;
-	border-width: 0 3px 3px 0;
-	display: inline-block;
-	padding: 3px;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-  	left: 1036.5px;
-	top: 161px;
 
-}
 
 
 #line_divi2_cs5_1 {
@@ -1876,14 +1410,6 @@ function validate6(form) {
 
 /* ------------------------------------  */
 
-#cs1_text{
-	position: absolute;
-	color:rgb(44, 44, 44);
-	font-size: 13px;	
-	font-weight: bold;
-	left: 310px;
-	top: 242px;
-}
 #cs2_text{
 	position: absolute;
 	color:rgb(44, 44, 44);
@@ -1908,14 +1434,7 @@ function validate6(form) {
 	left: 878px;
 	top: 242px;
 }
-#cs5_text{
-	position: absolute;
-	color:rgb(44, 44, 44);
-	font-size: 13px;	
-	font-weight: bold;
-	left: 1058px;
-	top: 242px;
-}
+
 
 /* ------------------------------------  */
 
@@ -2021,32 +1540,6 @@ function validate6(form) {
 	  padding: 3px 3px 3px 6px;
 	  margin: 0;
   }
-
-/* ---------------------------------------------------*/
-
-#c1{
-	position: absolute;
-	height: 80px;
-	width: 80px;
-	background-color: #ffffff;
-	border: 3px solid #000;
-	left: 80px;
-	top: 160px;
-	border-radius: 50%;
-}
-
-#c2{
-	width: 80px;
-    height: 40px; /* as the half of the width */
-    border-top-left-radius: 50px;
-    border-top-right-radius: 60px;
-    border: 3px solid #000;
-    border-bottom: 0;
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
 </style>
 </html>
